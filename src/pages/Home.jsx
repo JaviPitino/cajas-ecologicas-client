@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
         
-        <h3>Aqui iría un carrusel molón</h3>
+        <h3>Hogar... Aqui iría un carrusel molón</h3>
         
     </div>
   )
