@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { signupService } from "../../services/auth.services";
+
 
 function Signup() {
 
@@ -21,11 +23,10 @@ function Signup() {
     e.preventDefault();
 
     const user = { username, email, password };
-    console.log(user)
     try {
       await signupService(user);
-      navigate("/login");
-    } catch (error) {
+      navigate('/login')
+      } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data.errorMessage);
       } else {
