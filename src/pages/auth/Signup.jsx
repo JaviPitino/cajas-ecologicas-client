@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { signupService } from "../../services/auth.services";
 
 function Signup() {
-    
+
   const navigate = useNavigate();
 
   // Creamos los estados
@@ -55,7 +55,7 @@ function Signup() {
           onChange={handleEmailChange}
         />
         <br />
-        <label>Contraseña:</label>
+        <label>Contraseña: </label>
         <input
           type="password"
           name="password"
