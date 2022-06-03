@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { signupService } from "../../services/auth.services";
+import axios from "axios";
 
 function Signup() {
 
@@ -21,7 +22,7 @@ function Signup() {
     e.preventDefault();
 
     const user = { username, email, password };
-
+    console.log(user)
     try {
       await signupService(user);
       navigate("/login");
@@ -47,7 +48,7 @@ function Signup() {
           onChange={handleUsernameChange}
         />
         <br />
-        <label> Correo Elecntrónico: </label>
+        <label> Correo Electrónico: </label>
         <input
           type="email"
           name="email"

@@ -19,27 +19,26 @@ function Navbar() {
         textDecoration: 'none',
     }
 
-
   return (
     <div>
 
-            <nav>
-                <NavLink to="/" style={toggleStyles}> Home </NavLink>
-                <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
-                <NavLink to="/login" style={toggleStyles}> Accede </NavLink>
-            </nav>
-        {/* { user !== null && <p> Bienvenido: <strong> {user.username} </strong> </p> }
+      <nav>
+        <NavLink to="/" style={toggleStyles}> Home </NavLink>
+        <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
+        <NavLink to="/login" style={toggleStyles}> Accede </NavLink>
+      </nav>
+      {/* { user !== null && <p> Bienvenido: <strong> {user.username} </strong> </p> }
 
-        { isLogin === true ? (
-            <nav>
-                 <NavLink to="/" style={toggleStyles}> Home </NavLink>
-            </nav>
-        ) : (
-            <nav>
-                <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
-                <NavLink to="/login" style={toggleStyles}> Accede </NavLink>
-            </nav>
-        )} */}
+      { isLogin === true ? (
+        <nav>
+          <NavLink to="/" style={toggleStyles}> Home </NavLink>
+        </nav>
+      ) : (
+        <nav>
+          <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
+          <NavLink to="/login" style={toggleStyles}> Accede </NavLink>
+        </nav>
+      )} */}
     </div>
   )
 }

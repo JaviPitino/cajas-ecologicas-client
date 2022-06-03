@@ -17,6 +17,9 @@ function AuthWrapper(props) {
 
             // Llamamos a la ruta de Verify
             const response = await verifyService()
+            // Comprobamos con console.log
+            console.log("Token válido")
+            console.log("El payload es:", response.data)
             setIsLogin(true)
             setUser(response.data)
             setIsLoading(false)
