@@ -11,6 +11,14 @@ const loginService = (user) => {
 
 const verifyService = () => {
     return service.get("/auth/verify")
-} 
+}
 
-export { signupService, loginService, verifyService }
+const editProfileService = (user) => { // Editar el perfil del usuario
+    return service.patch(`/profile/${user.id}/edit`)
+}
+
+const getProfileDetailsService = (id) => { // Mostramos los detalles del Perfil del Usuario
+    return service.get(`/profile/${id}`)
+}
+
+export { signupService, loginService, verifyService, editProfileService, getProfileDetailsService }
