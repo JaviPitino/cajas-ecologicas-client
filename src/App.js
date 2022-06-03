@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import BoxCreate from './pages/BoxCreate';
+import FoodsList from './pages/FoodsList';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/profile" element={ <Profile />} />
         <Route path="/profile/:id/edit" element={ <ProfileEdit />} />
         <Route path="/cajas" element={ <BoxCreate />} />
+        <Route path="/alimentos" element={ <FoodsList />} />
       </Routes>
     </div>
   );
