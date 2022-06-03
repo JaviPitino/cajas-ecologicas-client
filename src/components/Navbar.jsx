@@ -26,7 +26,7 @@ function Navbar() {
         <NavLink to="/" style={toggleStyles}> Home </NavLink>
         <NavLink to="/signup" style={toggleStyles}> Registro </NavLink>
         <NavLink to="/login" style={toggleStyles}> Accede </NavLink>
-        <NavLink to="/profile" style={toggleStyles}>Perfil</NavLink>
+        <NavLink to="/profile" style={toggleStyles}> Perfil </NavLink>
       </nav>
       {/* { user !== null && <p> Bienvenido: <strong> {user.username} </strong> </p> }
 

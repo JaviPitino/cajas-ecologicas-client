@@ -16,13 +16,14 @@ function Profile() {
     try {
       const response = await getProfileDetailsService(id)
       setProfileDetails(response.data)
+      console.log(response.data)
     } catch (error) {
       navigate('/error')
     }
   }
 
   return (
-    <div>Profile
+    <div>
       <h4>Usuario: {profileDetails.username}</h4>
       <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link>
     </div>

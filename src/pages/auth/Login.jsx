@@ -38,7 +38,6 @@ function Login() {
         authenticateUser()
         navigate("/cliente")
 
-
     } catch (error) {
 
         if (error.response.status === 400 || error.response.status === 401) {

@@ -42,7 +42,7 @@ function ProfileEdit() {
             <label htmlFor="username">Usuario</label>
         </div>
         {/* <div>
-            <input type="password" name="password"  onChange={handleEmail} value={email}/>
+            <input type="password" name="password"  onChange={handlePassword} value={email}/>
             <label htmlFor="password">Contraseña</label>
         </div> */}
 
