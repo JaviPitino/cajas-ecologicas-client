@@ -49,10 +49,6 @@ function BoxCreate(props) {
     }
   }
 
-  const viewFoods = () => {
-    
-  }
-
   console.log(allFoods)
   return (
     <div>
