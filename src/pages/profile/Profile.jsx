@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { getProfileDetailsService } from '../services/auth.services'
+import { getProfileDetailsService } from '../../services/auth.services'
 
 function Profile() {
 
