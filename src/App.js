@@ -18,6 +18,8 @@ import IsPrivate from './components/IsPrivate';
 import FarmerBoxes from './pages/FarmerBoxes';
 import BoxDetails from './pages/boxes/BoxDetails';
 import BoxEdit from './pages/boxes/BoxEdit';
+import FoodDetails from './pages/food/FoodDetails';
+import FoodCreate from './pages/food/FoodCreate';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path='/cajas/:id/edit' element={ < BoxEdit/> } />
         <Route path='/:id/cajas' element={<FarmerBoxes />} />
         <Route path="/alimentos" element={ <IsPrivate><FoodsList /></IsPrivate>} />
+        <Route path='/alimentos/create' element={<FoodCreate />} />
+        <Route path='/alimentos/:id/details' element={< FoodDetails/>} />
       </Routes>
     </div>
   );

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { editBoxesService, detailsBoxesService } from "../../services/box.services";
 import { getAllFoodsService } from "../../services/foods.services";
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 function BoxEdit() {
   const { id } = useParams();
@@ -46,13 +48,14 @@ function BoxEdit() {
       setPrice(price);
       setBoxmodel(boxmodel);
       setFoods(foods)
-      console.log(foods)
       const responseFood = await getAllFoodsService();
       setAllFoods(responseFood.data);
     } catch (error) {
       navigate("/error");
     }
   };
+
+  console.log(allFoods)
 
   return (
     <div key={id}>
@@ -71,6 +74,7 @@ function BoxEdit() {
           type="checkbox"
           name="boxmodel"
           onChange={handleBoxmodelChange}
+          value={boxmodel}
         />
         
         <label htmlFor="boxmodel">Mediana</label>
@@ -78,6 +82,7 @@ function BoxEdit() {
           type="checkbox"
           name="boxmodel"
           onChange={handleBoxmodelChange}
+          value={boxmodel}
         />
         
         <label htmlFor="boxmodel">Grande</label>
@@ -85,6 +90,7 @@ function BoxEdit() {
           type="checkbox"
           name="boxmodel"
           onChange={handleBoxmodelChange}
+          value={boxmodel}
         />
         <br />
 
@@ -98,29 +104,28 @@ function BoxEdit() {
         />
         <div>
           <div>
-            {/* <label htmlFor="foods">{foods.map((eachFood) => {
-                return (
-                  <>
-                    <li>{eachFood.name}</li>
-                  </>
-                );
-              })}</label>
-              <br /> */}
-            <select
+          <select
               defaultValue={allFoods[0]}
               name="foods"
               multiple="true"
               onChange={handleFoodsChange}>
-
               {allFoods.map((eachFood) => {
                 return (
                   <option value={eachFood.name}>{eachFood.name}</option>
                 );
               })}
             </select>
+            {/* <Select
+            closeMenuOnSelect={false}
+            components={makeAnimated}
+            defaultInputValue={allFoods[0]}
+            isMulti
+            name="foods"
+            options={allFoods}
+            /> */}
           </div>
         </div>
-        <button type="submit">Editar</button>
+        <button type="submit">Guardar</button>
       </form>
     </div>
   );
