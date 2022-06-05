@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { addNewBoxService } from '../../services/box.services'
 import { getAllFoodsService } from '../../services/foods.services'
 import { verifyService } from '../../services/auth.services';
+import { Button } from 'react-bootstrap'
 
 function BoxCreate(props) {
   const [ name, setName ] = useState("");
@@ -52,22 +53,20 @@ function BoxCreate(props) {
     <div>
       <h3> Añadir Caja</h3>
         <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre</label>
         <input
           type="text"
           name="nombre"
-          
           onChange={handleNameChange}
+          placeholder="Nombre"
         />
-
-        <label htmlFor="price">Precio</label>
+        <br />
         <input
           type="num"
           name="price"
           onChange={handlePriceChange}
-          
-        /> <p>€</p>
-
+          placeholder="Precio"
+        /> <span>€</span>
+        <br />  
         <div>
           <div>
             <select defaultValue={allFoods[0]}
@@ -89,7 +88,7 @@ function BoxCreate(props) {
               </div>
             </div>
 
-          <button type="submit">Agregar</button>
+          <Button variant="success" type="submit">Agregar</Button>
         </form>
       </div>
   )

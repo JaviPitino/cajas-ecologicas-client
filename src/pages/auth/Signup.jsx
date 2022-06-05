@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signupService } from "../../services/auth.services";
+import { Button } from "react-bootstrap"
 
 
 function Signup() {
@@ -12,17 +13,20 @@ function Signup() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isFarmer, setIsFarmer] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
   // Eventos handlers
   const handleUsernameChange = (e) => setUserName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleIsFarmerChange = (e) => setIsFarmer(e.target.checked)
 
   const handleSignup = async (e) => {
     e.preventDefault();
 
     const user = { username, email, password };
+
     try {
       await signupService(user);
       navigate('/login')
@@ -40,6 +44,20 @@ function Signup() {
       <h3>Regístrate</h3>
 
       <form onSubmit={handleSignup}>
+      <span> Si tienes un huerto y eres <strong>agricultor</strong> marca aquí &nbsp;</span>
+
+      <label className="switch">
+        <input input type="checkbox" 
+          name="farmer"
+          onChange={handleIsFarmerChange}
+          checked={isFarmer}
+          />
+        <span className="slider"></span>
+      </label>
+      <br />
+ 
+      
+        <br />
         <label>Nombre: </label>
         <input
           type="text"
@@ -65,8 +83,9 @@ function Signup() {
         />
 
         {errorMessage !== null && <p>{errorMessage}</p>}
-
-        <button type="submit"> Registrar </button>
+      <br />
+      
+        <Button variant="success" type="submit"> Registrar </Button>
       </form>
     </div>
   );

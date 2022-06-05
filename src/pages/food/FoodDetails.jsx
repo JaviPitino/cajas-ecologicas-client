@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getFoodDetailsService } from "../../services/foods.services";
+import { Button } from 'react-bootstrap'
 
 function FoodDetails() {
   const navigate = useNavigate();
@@ -22,15 +23,23 @@ function FoodDetails() {
 
   return (
     <div>
-      FoodDetails
-      {foodDetails.name}
+      <p>Detalles del producto: <strong> {foodDetails.name} </strong> </p>
       <div>
-        <img src={foodDetails.image} alt="" />
+        <img src={foodDetails.image} alt="image" />
       </div>
       <div>
-        {/* {(foodDetails.season).map((eachSeason) => {
-          return <li>{eachSeason}</li>;
-        })} */}
+        {foodDetails.season}
+        <br />
+        {/* {
+          foodDetails.map((eachFood) => {
+          return (
+            <li key={eachFood._id}>{eachFood.season}</li>
+            )
+          })
+        } */}
+        <Button variant="success" to={"/alimentos"}>
+          <Link className="link-btn" to={"/alimentos"}> Volver </Link>
+        </Button> 
       </div>
     </div>
   );
