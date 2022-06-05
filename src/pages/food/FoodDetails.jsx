@@ -28,9 +28,9 @@ function FoodDetails() {
         <img src={foodDetails.image} alt="" />
       </div>
       <div>
-        {(foodDetails.season).map((eachSeason) => {
+        {/* {(foodDetails.season).map((eachSeason) => {
           return <li>{eachSeason}</li>;
-        })}
+        })} */}
       </div>
     </div>
   );

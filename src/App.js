@@ -15,13 +15,14 @@ import FoodDetails from './pages/food/FoodDetails';
 import FoodCreate from './pages/food/FoodCreate';
 import ClientView from './pages/client/ClientView';
 import FarmerBoxes from './pages/farmer/FarmerBoxes';
+import Farmer from './pages/farmer/Farmer';
 
 // components
 import NavbarTop from './components/NavbarTop';
 
 //auth
 import IsPrivate from './components/IsPrivate';
-import Farmer from './pages/farmer/Farmer';
+
 
 
 
@@ -41,7 +42,7 @@ function App() {
         <Route path='/cajas/:id' element={ <BoxDetails />} />
         <Route path='/cajas/:id/edit' element={ < BoxEdit/> } />
         <Route path='/agricultor' element={<Farmer />} />
-        <Route path='/:id' element={<FarmerBoxes />} /> {/*  PARA ACCEDER LOS CLIENTES */}
+        <Route path='/agricultores/:id/cajas' element={<FarmerBoxes />} /> {/*  PARA ACCEDER LOS CLIENTES */}
         <Route path="/alimentos" element={ <FoodsList />} />
         <Route path='/alimentos/create' element={<FoodCreate />} />
         <Route path='/alimentos/:id' element={< FoodDetails/>} />

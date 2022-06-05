@@ -5,7 +5,7 @@ const allFarmersService = () => {
 }
 
 const oneFarmerService = (id) => {
-  return service.get(`/agricultor`)
+  return service.get(`/agricultor`,id)
 }
 
 

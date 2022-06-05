@@ -34,7 +34,7 @@ function ClientView() {
         {farmers.map((eachFarmer) => {
           
           return (
-            <Link to={`/${eachFarmer._id}`}>
+            <Link to={`/agricultores/${eachFarmer._id}/cajas`}>
               <li>{eachFarmer.username}</li>
             </Link>
           );
