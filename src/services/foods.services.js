@@ -5,7 +5,7 @@ const getAllFoodsService = () => {
 }
 
 const addNewFoodService = (newFood) => {
-  return service.post('/alimentos')
+  return service.post('/alimentos',newFood)
 }
 
 const getFoodDetailsService = (id) => {

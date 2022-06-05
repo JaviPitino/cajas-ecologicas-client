@@ -56,7 +56,7 @@ function BoxCreate(props) {
         <input
           type="text"
           name="nombre"
-          value={"Nombre"}
+          
           onChange={handleNameChange}
         />
 
@@ -65,7 +65,7 @@ function BoxCreate(props) {
           type="num"
           name="price"
           onChange={handlePriceChange}
-          value={"Precio"}
+          
         /> <p>€</p>
 
         <div>

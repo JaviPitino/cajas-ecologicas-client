@@ -43,7 +43,7 @@ function FoodsList() {
           allFoodsToDisplay.map((eachFood) => {
             return (
               <div className='container' key={eachFood._id}>
-              <Link to={`/alimentos/${eachFood._id}/details`}>
+              <Link to={`/alimentos/${eachFood._id}`}>
                 <div><img src={eachFood.image} alt="image" /></div>
                 <div>{eachFood.name}</div>
                 <br />

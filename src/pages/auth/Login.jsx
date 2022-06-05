@@ -36,6 +36,7 @@ function Login() {
         // Guardar el Token en el localStorage
         localStorage.setItem("authToken", response.data.authToken)
         authenticateUser()
+        //! CONDICIONAL PARA REDIRECCIONAR SEGUN EL ROL DEL USUARIO QUE SE LOGEA
         navigate("/cliente")
 
     } catch (error) {

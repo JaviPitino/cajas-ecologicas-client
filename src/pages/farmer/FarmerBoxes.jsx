@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
-import { findBoxesByFarmerService } from '../services/box.services'
+import { findBoxesByFarmerService } from '../../services/box.services'
 
 
 function FarmerBoxes() {
@@ -12,7 +12,7 @@ function FarmerBoxes() {
   }, [])
   const getBoxesByFarmer = async () => {
     try {
-      const response = await findBoxesByFarmerService()
+      const response = await findBoxesByFarmerService(id)
       console.log(response.data)
       setBoxesByFarmer(response.data)
     } catch (error) {
