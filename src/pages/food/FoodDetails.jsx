@@ -37,9 +37,8 @@ function FoodDetails() {
             )
           })
         } */}
-        <Button variant="success" to={"/alimentos"}>
-          <Link className="link-btn" to={"/alimentos"}> Volver </Link>
-        </Button> 
+        
+          <Link className="link-btn" to={"/alimentos"}> <Button variant="success" to={"/alimentos"}> Volver </Button> </Link>
       </div>
     </div>
   );

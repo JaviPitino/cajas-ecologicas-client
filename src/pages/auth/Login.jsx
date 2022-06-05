@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 
 function Login() {
   // UseContext
-  const { authenticateUser, user, isLogin } = useContext(AuthContext);
+  const { authenticateUser, user } = useContext(AuthContext);
 
   const dataUser = user;
   const navigate = useNavigate();
@@ -55,10 +55,8 @@ function Login() {
   return (
     <div>
       <form onSubmit={handleLogin}>
-        <label> </label>
         <div className="form-center container-fluid">
           <div className="row col-4 map_section">
-
             <input
               className="form-control"
               type="email"
@@ -68,7 +66,6 @@ function Login() {
               onChange={handleEmailChange}
             />
             <br />
-            <label></label>
             <input
               className="form-control"
               type="password"

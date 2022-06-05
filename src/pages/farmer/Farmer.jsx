@@ -32,9 +32,10 @@ function Farmer(props) {
 
   return (
     <div>
-        Farmer
+      <h3>SOY FARMER(quitar esto)</h3>
       {/* <Link to={`/${_id}`}>Cajas</Link> */}
-      <Link to="/alimentos"><Button>Alimentos</Button></Link>
+      <Link to="/listacajas"><Button variant="success" > Mis Eco Cajas </Button></Link>
+      <Link to="/alimentos"><Button variant="success" >Alimentos</Button></Link>
     </div>
   )
 }

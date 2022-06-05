@@ -43,7 +43,7 @@ function FoodsList() {
             return (
               <div className='container' key={eachFood._id}>
               <Link className="link" to={`/alimentos/${eachFood._id}`}>
-                <div><img src={eachFood.image} alt="image" /></div>
+                <div><img src={eachFood.image} alt="image" width={80}/></div>
                 <div>{eachFood.name}</div>
                 <br />
               </Link>
