@@ -9,7 +9,7 @@ function AuthWrapper(props) {
     const [ isLogin, setIsLogin ] = useState(false)
     const [ user, setUser ] = useState(null)
     const [ isLoading, setIsLoading ] = useState(true)
-
+    
     const authenticateUser = async () => {
         setIsLoading(true)
 

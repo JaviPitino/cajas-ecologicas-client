@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from "react-router-dom" 
-import { editProfileService } from '../services/auth.services'
+import { editProfileService } from '../../services/auth.services'
 
 function ProfileEdit() {
 

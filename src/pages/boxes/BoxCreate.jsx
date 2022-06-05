@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { addNewBoxService } from '../services/box.services'
-import { getAllFoodsService } from '../services/foods.services'
-import { verifyService } from '../services/auth.services';
+import { addNewBoxService } from '../../services/box.services'
+import { getAllFoodsService } from '../../services/foods.services'
+import { verifyService } from '../../services/auth.services';
 
 function BoxCreate(props) {
   const [ name, setName ] = useState("");
@@ -42,14 +42,12 @@ function BoxCreate(props) {
   const getAllFoods = async () => {
     try {
       const response = await getAllFoodsService()
-      console.log(response.data)
       setAllFoods(response.data)
     } catch (error) {
       navigate('/error')
     }
   }
 
-  console.log(allFoods)
   return (
     <div>
       <h3> Añadir Caja</h3>
@@ -58,8 +56,8 @@ function BoxCreate(props) {
         <input
           type="text"
           name="nombre"
+          
           onChange={handleNameChange}
-          value={name}
         />
 
         <label htmlFor="price">Precio</label>
@@ -67,19 +65,15 @@ function BoxCreate(props) {
           type="num"
           name="price"
           onChange={handlePriceChange}
-          value={price}
-        />
+          
+        /> <p>€</p>
 
         <div>
           <div>
             <select defaultValue={allFoods[0]}
-              isDisable={false}
-              isLoading={false}
-              isClearable={true}
-              isRtl={false}
-              isSearchable={true}
               name="foods"
               multiple="true"
+              onChange={handleFoodsChange}
               > 
               {allFoods.map((eachFood)=> {
                 return(
@@ -95,11 +89,7 @@ function BoxCreate(props) {
               </div>
             </div>
 
-        <button type="submit">Agregar</button>
-
-
-
-
+          <button type="submit">Agregar</button>
         </form>
       </div>
   )

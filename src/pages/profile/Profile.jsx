@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { getProfileDetailsService } from '../services/auth.services'
+import { getProfileDetailsService } from '../../services/auth.services'
 
 function Profile() {
 
@@ -21,11 +21,12 @@ function Profile() {
       navigate('/error')
     }
   }
-
+  
   return (
     <div>
-      <h4>Usuario: {profileDetails.username}</h4>
-      <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link>
+      <h3>Perfil del Usuario</h3>
+      {/* <h4>Usuario: {profileDetails.username}</h4>
+      <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link> */}
     </div>
   )
 }

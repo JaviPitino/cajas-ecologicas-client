@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -40,4 +42,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.NavbarTop{
+  
+  z-index: 999!important;
+}
+
+.containerCarusel{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative!important;
+  z-index: 0!important;
 }

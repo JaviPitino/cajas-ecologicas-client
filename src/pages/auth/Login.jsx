@@ -1,18 +1,19 @@
 import { useContext, useState } from "react";
 import { useNavigate } from 'react-router-dom'
-import { loginService } from '../../services/auth.services'
+import { loginService, verifyService } from '../../services/auth.services'
 import { AuthContext } from "../../context/auth.context"
 
 function Login() {
 
  // UseContext
-  const { authenticateUser } = useContext(AuthContext)
-
+  const { authenticateUser, user, isLogin } = useContext(AuthContext)
+  const dataUser = user;
   const navigate = useNavigate();
 
   // Creamos los estados
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [ role, setRole ] = useState("")
   const [errorMessage, setErrorMessage] = useState(null);
 
   // Eventos Handlers
@@ -24,19 +25,25 @@ function Login() {
 
     const user = {
         email,
-        password
+        password,
     }
   
-
     try {
-
+        
         // Validar al usuario
         const response = await loginService(user)
-
         // Guardar el Token en el localStorage
         localStorage.setItem("authToken", response.data.authToken)
         authenticateUser()
-        navigate("/cliente")
+        setRole(dataUser.role)
+        //! CONDICIONAL PARA REDIRECCIONAR SEGUN EL ROL DEL USUARIO QUE SE LOGEA
+        if (dataUser.role === "farmer"){
+          navigate("/agricultor")
+        }
+        if (dataUser.role === "client") {
+          navigate("/cliente")
+        }
+        
 
     } catch (error) {
 
