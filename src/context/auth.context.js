@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { useStateManager } from "react-select";
 import { verifyService } from '../services/auth.services';
 
 const AuthContext = createContext()
@@ -9,7 +10,7 @@ function AuthWrapper(props) {
     const [ isLogin, setIsLogin ] = useState(false)
     const [ user, setUser ] = useState(null)
     const [ isLoading, setIsLoading ] = useState(true)
-    
+    const [ role , setRole] = useState(null)
     const authenticateUser = async () => {
         setIsLoading(true)
 
@@ -21,11 +22,14 @@ function AuthWrapper(props) {
             setIsLogin(true)
             setUser(response.data)
             setIsLoading(false)
+            setRole(response.data.role)
+            return response.data.role
 
         } catch(error) {
             setIsLogin(false)
             setUser(null)
             setIsLoading(false)
+            setRole(null)
         }
     }
 

@@ -1,22 +1,22 @@
-import React from 'react';
-import App from './App';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import 'tw-elements';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthWrapper } from './context/auth.context';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React from "react";
+import App from "./App";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import "tw-elements";
+import { BrowserRouter } from "react-router-dom";
+import { AuthWrapper } from "./context/auth.context";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-      <AuthWrapper>
-        <React.StrictMode>
+  <BrowserRouter>
+    <AuthWrapper>
+      <React.StrictMode>
         <App />
-        </React.StrictMode>
-      </AuthWrapper>
-    </BrowserRouter>
+      </React.StrictMode>
+    </AuthWrapper>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
