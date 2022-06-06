@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getProfileDetailsService } from '../../services/auth.services'
 import { AuthContext } from "../../context/auth.context";
 
 function Profile() {
 
-  const { authenticateUser, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate()
   const [ profileDetails, setProfileDetails ] = useState(null)
-
+  
   useEffect(() => {
     getProfileDetails()
   },[])
@@ -17,7 +17,7 @@ function Profile() {
     try {
       const response = await getProfileDetailsService(user._id)
       setProfileDetails(response.data)
-      console.log(response.data)
+      console.log(response)
     } catch (error) {
       navigate('/error')
     }
@@ -29,8 +29,7 @@ function Profile() {
   return (
     <div>
       <h3>Perfil del Usuario git push </h3>
-      {/* <h4>Usuario: {profileDetails.username}</h4>
-      <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link> */}
+      
       <Link to={`/profile/${profileDetails._id}/edit`}><button>Editar Perfil</button></Link>
     </div>
   )
