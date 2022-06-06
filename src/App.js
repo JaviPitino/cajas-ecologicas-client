@@ -18,6 +18,10 @@ import FarmerBoxes from "./pages/farmer/FarmerBoxes";
 import Farmer from "./pages/farmer/Farmer";
 import InfoBoxes from "./pages/InfoNologin/InfoBoxes";
 
+//Errors
+import Error from "./pages/Error"
+import NotFound from "./pages/NotFound"
+
 // components
 import NavbarTop from "./components/NavbarTop";
 
@@ -52,13 +56,16 @@ function App() {
         <Route path="/cajas/:id/edit" element={<IsPrivate> <IsFarmer><BoxEdit /></IsFarmer> </IsPrivate>} />
         {/* Agricultor */}
         <Route path="/agricultor" element={<IsPrivate> <IsFarmer><Farmer /></IsFarmer> </IsPrivate>} />
-        <Route path="/agricultores/:id/cajas" element={<FarmerBoxes />} />
-        {/*  PARA ACCEDER LOS CLIENTES */}
+        <Route path="/agricultores/:id/cajas" element={<IsPrivate><FarmerBoxes /></IsPrivate>} /> 
+        <Route path="/alimentos/create" element={<IsPrivate><IsFarmer><FoodCreate /></IsFarmer> </IsPrivate>} />
+        {/*  Clientes */}
+        <Route path="/cliente" element={<IsPrivate><IsClient><ClientView /></IsClient></IsPrivate>} />
+        {/* Acceso sin credenciales */}
         <Route path="/alimentos" element={<FoodsList />} />
-        <Route path="/alimentos/create" element={<FoodCreate />} />
         <Route path="/alimentos/:id" element={<FoodDetails />} />
-        <Route path="/cliente" element={<ClientView />} />
         <Route path="/infocajas" element={<InfoBoxes />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="/notfound" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -28,7 +28,7 @@
 }
 
 .NavbarTop{
-  position: fixed;
+  position: relative;
   z-index: 999;
   width: 100%;
 }
@@ -160,3 +160,4 @@
  input:checked + .slider:before {
   transform: translateX(1.5em);
  }
+
