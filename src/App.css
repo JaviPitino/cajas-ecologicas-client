@@ -13,6 +13,10 @@
   }
 }
 
+.textofoto {
+  position: absolute;
+}
+
 .link-btn {
   text-decoration: none;
   color: white;
@@ -28,6 +32,8 @@
   color: olive
 }
 
+
+/* FORMULARIOS */
 .form-center {
   display: flex;
   justify-content: center;
@@ -61,7 +67,7 @@
   }
 }
 
-/* Elemento CheckBox */
+/* ELEMENTO CHECKBOX */
 .switch {
   font-size: 10px;
   position: relative;

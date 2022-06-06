@@ -25,7 +25,7 @@ function Profile() {
   
   return (
     <div>
-      <h3>Perfil del Usuario Janderclander</h3>
+      <h3>Perfil del Usuario git push </h3>
       {/* <h4>Usuario: {profileDetails.username}</h4>
       <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link> */}
       <Link to={`/`}><button>Editar Perfil</button></Link>

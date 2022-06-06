@@ -1,8 +1,13 @@
 import React from 'react'
 
 function Carousel() {
+
   return (
-    <div className='containerCarusel'>
+
+    <div className='containerCarousel'>
+      <div>
+        <h4 className="textofoto">Lo que sea</h4>
+      </div>
         <div id="carouselExampleIndicators" className="carousel slide relative" data-bs-ride="carousel">
           <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
             <button
@@ -81,7 +86,7 @@ function Carousel() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-    </div>
+     </div>
   )
 }
 
