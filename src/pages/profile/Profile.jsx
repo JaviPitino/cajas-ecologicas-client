@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { getProfileDetailsService } from '../../services/auth.services'
+import { AuthContext } from "../../context/auth.context";
 
 function Profile() {
 
-  const { id } = useParams()
+  const { authenticateUser, user } = useContext(AuthContext);
   const navigate = useNavigate()
   const [ profileDetails, setProfileDetails ] = useState(null)
 
@@ -14,7 +15,7 @@ function Profile() {
 
   const getProfileDetails = async () => {
     try {
-      const response = await getProfileDetailsService(id)
+      const response = await getProfileDetailsService(user._id)
       setProfileDetails(response.data)
       console.log(response.data)
     } catch (error) {
@@ -27,6 +28,7 @@ function Profile() {
       <h3>Perfil del Usuario</h3>
       {/* <h4>Usuario: {profileDetails.username}</h4>
       <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link> */}
+      <Link to={`/`}><button>Editar Perfil</button></Link>
     </div>
   )
 }

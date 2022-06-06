@@ -60,7 +60,7 @@ function NavbarTop() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/alimentos">De la Huerta</Nav.Link>
-            <Nav.Link href="/cajas/create"> Tu EcoCaja </Nav.Link>
+            <Nav.Link href="/infocajas"> Nuestras Ecocajas </Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
