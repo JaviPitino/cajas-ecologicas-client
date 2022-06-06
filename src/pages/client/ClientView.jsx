@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { allFarmersService } from "../../services/farmers.services";
 import { getAllFoodsService } from "../../services/foods.services";
+import { ListGroup } from 'react-bootstrap'
 
 function ClientView() {
   const navigate = useNavigate();
@@ -29,26 +30,42 @@ function ClientView() {
 
   return (
     <div>
-      ClientView
+      <div>
+        <h4>Escoge tu agricultor</h4>
+        {/* <img src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654429191/carousel/carousel2_we0fr6.jpg" alt="Campo" /> */}
+      </div>
+      <div className="container-list-food">
       <div>
         {farmers.map((eachFarmer) => {
           
           return (
-            <Link to={`/agricultores/${eachFarmer._id}/cajas`}>
-              <li>{eachFarmer.username}</li>
-            </Link>
+            <ListGroup className='list-group'>
+              <ListGroup.Item >
+                <Link className="list-client"to={`/agricultores/${eachFarmer._id}/cajas`}>
+                   <strong>{eachFarmer.username.toUpperCase()}</strong>
+                   <br />
+                </Link>
+              </ListGroup.Item>
+            </ListGroup>
           );
         })}
       </div>
       <div>
         {foods.map((eachFood) => {
           return (
-            <Link to={`/alimentos/${eachFood._id}`}>
-              <li>{eachFood.name}</li>
-            </Link>
+
+            <ListGroup className='list-group'>
+              <ListGroup.Item >
+                <Link className="list-client" to={`/alimentos/${eachFood._id}`}>
+                  {eachFood.name} <img src={eachFood.image} width={"30px"} alt="imagen alimento" />
+                </Link>
+              </ListGroup.Item> 
+            </ListGroup>
+           
           );
         })}
       </div>
+    </div>
     </div>
   );
 }
