@@ -7,7 +7,7 @@ import { getAllFoodsService } from '../../services/foods.services'
 import { verifyService } from '../../services/auth.services';
 import { Button } from 'react-bootstrap'
 
-function BoxCreate(props) {
+function BoxCreate() {
   const [ name, setName ] = useState("");
   const [ price, setPrice ] = useState(0);
   const [ foods, setFoods ] = useState([]);
@@ -30,7 +30,7 @@ function BoxCreate(props) {
       const response = await verifyService()
       setFarmer(response.data._id)
       await addNewBoxService(newBox)
-      props.getAllBoxes()
+      navigate('/')
     } catch (error) {
       navigate('/error')
     }
@@ -69,15 +69,15 @@ function BoxCreate(props) {
         <br />  
         <div>
           <div>
-            <select defaultValue={allFoods[0]}
+            <select 
               name="foods"
-              multiple="true"
+              multiple={true}
               onChange={handleFoodsChange}
               > 
               {allFoods.map((eachFood)=> {
                 return(
                   <>
-                  <option value={eachFood.name}>
+                  <option value={eachFood._id}>
                     {eachFood.name}
                   </option>
                   </>

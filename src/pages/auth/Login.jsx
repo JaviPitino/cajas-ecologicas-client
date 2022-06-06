@@ -8,7 +8,7 @@ function Login() {
   // UseContext
   const { authenticateUser, user } = useContext(AuthContext);
 
-  const dataUser = user;
+  
   const navigate = useNavigate();
 
   // Creamos los estados
@@ -20,30 +20,34 @@ function Login() {
   // Eventos Handlers
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-
+  
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const user = {
+    const userIdentity = {
       email,
       password,
     };
 
     try {
       // Validar al usuario
-      const response = await loginService(user);
+      const response = await loginService(userIdentity);
       // Guardar el Token en el localStorage
       localStorage.setItem("authToken", response.data.authToken);
+      console.log(user.role)
+      setRole(user.role);
       authenticateUser();
-      setRole(dataUser.role);
+      
+      console.log(user)
       //! CONDICIONAL PARA REDIRECCIONAR SEGUN EL ROL DEL USUARIO QUE SE LOGEA
-      if (dataUser.role === "farmer") {
+      if (role === "farmer") {
         navigate("/agricultor");
       }
-      if (dataUser.role === "client") {
+      if (role === "client") {
         navigate("/cliente");
       }
     } catch (error) {
+      console.log(error)
       if (error.response.status === 400 || error.response.status === 401) {
         setErrorMessage(error.response.data.errorMessage);
       } else {

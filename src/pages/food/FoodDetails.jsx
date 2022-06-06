@@ -21,6 +21,10 @@ function FoodDetails() {
     }
   };
 
+  if (!foodDetails){
+    return <h3>...Loading</h3>
+  }
+
   return (
     <div>
       <p>Detalles del producto: <strong> {foodDetails.name} </strong> </p>
@@ -28,15 +32,15 @@ function FoodDetails() {
         <img src={foodDetails.image} alt="image" />
       </div>
       <div>
-        {foodDetails.season}
+        {/* {foodDetails.season} */}
         <br />
-        {/* {
-          foodDetails.map((eachFood) => {
+        {
+          foodDetails.season.map((eachFood) => {
           return (
-            <li key={eachFood._id}>{eachFood.season}</li>
+            <li>{eachFood}</li>
             )
           })
-        } */}
+        }
         
           <Link className="link-btn" to={"/alimentos"}> <Button variant="success" to={"/alimentos"}> Volver </Button> </Link>
       </div>
