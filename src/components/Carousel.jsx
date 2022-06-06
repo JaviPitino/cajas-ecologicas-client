@@ -13,8 +13,7 @@ function CarouselHome() {
     <Carousel>
 
       <Carousel.Item interval={5000}>
-        <img
-          className="d-block w-100"
+        <img className="image-carousel"
           src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654519978/carousel/newcarousel/carrousel1_mlrpe8_oxhyuo.jpg"
           alt="Campo de trigo"
         />
@@ -25,7 +24,7 @@ function CarouselHome() {
       </Carousel.Item>
       <Carousel.Item interval={5000}>
         <img
-          className="d-block w-100"
+          className="image-carousel"
           src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654519896/carousel/newcarousel/carousel3_jt7fwx_cby3d9.jpg"
           alt="Cajas de comida"
         />
@@ -36,7 +35,7 @@ function CarouselHome() {
       </Carousel.Item>
       <Carousel.Item interval={4000}>
         <img
-          className="d-block w-100"
+          className="image-carousel"
           src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654519924/carousel/newcarousel/carousel4_u3wqsw_gzhzcz.jpg"
           alt="Cultivos"
         />
@@ -48,7 +47,7 @@ function CarouselHome() {
       </Carousel.Item>
       <Carousel.Item interval={4000}>
         <img
-          className="d-block w-100"
+          className="image-carousel"
           src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654519948/carousel/newcarousel/carousel2_we0fr6_twnoce.jpg"
           alt="Productos ecologicos"
         />

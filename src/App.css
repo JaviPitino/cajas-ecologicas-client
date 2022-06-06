@@ -13,150 +13,334 @@
   }
 }
 
-.texto-foto {
-  position: absolute;
-}
+@media (max-width: 575.98px) { 
 
-.link-btn {
-  text-decoration: none;
-  color: white;
-}
-
-.link-btn:hover {
-  text-decoration: none;
-  color: rgb(197, 224, 192);
-}
-
-.NavbarTop{
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-}
-
-.link {
-  text-decoration: none;
-  color: olive
-}
-
-.titulo-foto{
-  display: flex;
-  position: absolute;
-  align-items: center;
-}
-
-.caption{
-  font-size: 3.5em;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.caption h2{
-  font-weight: bolder;
-  font-size: 1.3em;
-  width: 500px;
-  height: 80vh;
-  text-align: left;
-  text-shadow: 1px 3px 8px rgb(97, 95, 95);
-}
-  /* justify-content: center; */
-
-.caption p{
-  margin-top: 250px;
-  font-size: 0.4em;
-  height: 100vh;
-  display: flex;
-  width: 500px;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  text-shadow: 1px 3px 8px rgb(97, 95, 95);
-}
-
-/* FORMULARIOS */
-.form-center {
-  display: flex;
-  justify-content: center;
-}
-
-.form-control {
-  margin-bottom: 20px;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: olive;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .caption {
+    font-size: 2em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .caption h2{
+    
+    display: flex;
+    font-weight: bolder;
+    font-size: 1em;
+    margin-top: 200px;
+    width: 180px;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  
+  .caption p{
+    /* margin-top: 50px; */
+    font-size: 0.4em;
+    display: flex;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  .image-carousel {
+    height: 100vh;
+  }
+ }
+
+ @media (max-width: 576px) {
+  .caption {
+    font-size: 1.8em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .caption h2{
+    padding-top: 100px;
+    display: flex;
+    font-weight: bolder;
+    font-size: 1em;
+    /* margin-top: 450px; */
+    width: 180px;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  
+  .caption p{
+    /* margin-top: 50px; */
+    font-size: 0.4em;
+    display: flex;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  .image-carousel {
+    height: 100vh;
+  }
+
+ }
+
+ 
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .caption {
+    font-size: 2em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .caption h2{
+    padding-top: 250px;
+    display: flex;
+    font-weight: bolder;
+    font-size: 1em;
+    /* margin-top: 450px; */
+    width: 200px;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  
+  .caption p{
+    /* margin-top: 50px; */
+    font-size: 0.4em;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  .image-carousel {
+    height: 100vh;
+  }
+
+} 
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  
+  .caption {
+    font-size: 2.5em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .caption h2{
+    /* padding-top: 0px; */
+    display: flex;
+    font-weight: bolder;
+    font-size: 1em;
+    margin-top: 250px;
+    width: 250px;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+    /* justify-content: center; */
+  
+  .caption p{
+    /* margin-top: 50px; */
+    font-size: 0.4em;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+
+  .image-carousel {
+    height: 100vh;
   }
 }
 
-/* ELEMENTO CHECKBOX */
-.switch {
-  font-size: 10px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+  .caption {
+    font-size: 3em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .caption h2{
+    padding-top: 220px;
+    display: flex;
+    font-weight: bolder;
+    font-size: 1em;
+    /* margin-top: 180px; */
+    width: 300px;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+    /* justify-content: center; */
+  
+  .caption p{
+    /* margin-top: 50px; */
+    font-size: 0.4em;
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+  .image-carousel {
+    height: 100vh;
+  }
+} 
+
+@media (min-width: 1200px) {
+  .texto-foto {
+    position: relative;
+  }
+  
+  .link-btn {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .link-btn:hover {
+    text-decoration: none;
+    color: rgb(197, 224, 192);
+  }
+  
+  .link {
+    text-decoration: none;
+    color: olive
+  }
+  
+  .titulo-foto{
+    display: flex;
+    position: absolute;
+    align-items: center;
+  }
+  
+  .caption{
+    font-size: 3em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .caption h2{
+    padding-top: 150px;
+    font-weight: bolder;
+    font-size: 1.3em;
+    width: 350px;
+    height: 80vh;
+    text-align: left;
+    text-shadow: 1px 3px 8px rgb(97, 95, 95);
+  }
+    /* justify-content: center; */
+  
+  .caption p{
+    margin-top: 360px;
+    font-size: 0.4em;
+    height: 100vh;
+    display: flex;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    text-shadow: 1px 4px 8px rgb(97, 95, 95);
+  }
+
+  .image-carousel {
+    width: 100%;
+  }
+  
+  /* FORMULARIOS */
+  .form-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: olive;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* ELEMENTO CHECKBOX */
+  .switch {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: olive;
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px olive;
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
+
  }
- 
- /* Hide default HTML checkbox */
- .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
- }
- 
- /* The slider */
- .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 30px;
- }
- 
- .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: white;
-  transition: .4s;
- }
- 
- input:checked + .slider {
-  background-color: olive;
- }
- 
- input:focus + .slider {
-  box-shadow: 0 0 1px olive;
- }
- 
- input:checked + .slider:before {
-  transform: translateX(1.5em);
- }
+
