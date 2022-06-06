@@ -23,6 +23,8 @@ import NavbarTop from "./components/NavbarTop";
 
 //auth
 import IsPrivate from "./components/IsPrivate";
+import IsFarmer from "./components/IsFarmer";
+import IsClient from "./components/IsClient";
 
 function App() {
   return (
@@ -45,10 +47,11 @@ function App() {
         />
         <Route path="/profile/:id/edit" element={<ProfileEdit />} />
         {/* Cajas */}
-        <Route path="/cajas/create" element={<BoxCreate />} />
+        <Route path="/cajas/create" element={<IsPrivate> <IsFarmer><BoxCreate /></IsFarmer> </IsPrivate>} />
         <Route path="/cajas/:id" element={<BoxDetails />} />
-        <Route path="/cajas/:id/edit" element={<BoxEdit />} />
-        <Route path="/agricultor" element={<Farmer />} />
+        <Route path="/cajas/:id/edit" element={<IsPrivate> <IsFarmer><BoxEdit /></IsFarmer> </IsPrivate>} />
+        {/* Agricultor */}
+        <Route path="/agricultor" element={<IsPrivate> <IsFarmer><Farmer /></IsFarmer> </IsPrivate>} />
         <Route path="/agricultores/:id/cajas" element={<FarmerBoxes />} />
         {/*  PARA ACCEDER LOS CLIENTES */}
         <Route path="/alimentos" element={<FoodsList />} />

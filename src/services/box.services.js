@@ -4,8 +4,8 @@ const addNewBoxService = (newBox) => {
   return service.post('/cajas/create', newBox)
 }
 
-const findBoxesByFarmerService = (id) => {
-  return service.get(`/${id}/cajas`)
+const findBoxesByIdService = (id) => {
+  return service.get(`/cajas/${id}`)
 }
 
 const detailsBoxesService = (id) => {
@@ -22,7 +22,7 @@ const deleteBoxService = (id) => {
 
 export {
   addNewBoxService,
-  findBoxesByFarmerService,
+  findBoxesByIdService,
   detailsBoxesService,
   editBoxesService,
   deleteBoxService
