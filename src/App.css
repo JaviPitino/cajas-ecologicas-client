@@ -13,7 +13,7 @@
   }
 }
 
-.textofoto {
+.texto-foto {
   position: absolute;
 }
 
@@ -27,11 +27,52 @@
   color: rgb(197, 224, 192);
 }
 
+.NavbarTop{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
 .link {
   text-decoration: none;
   color: olive
 }
 
+.titulo-foto{
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+
+.caption{
+  font-size: 3.5em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.caption h2{
+  font-weight: bolder;
+  font-size: 1.3em;
+  width: 500px;
+  height: 80vh;
+  text-align: left;
+  text-shadow: 1px 3px 8px rgb(97, 95, 95);
+}
+  /* justify-content: center; */
+
+.caption p{
+  margin-top: 250px;
+  font-size: 0.4em;
+  height: 100vh;
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  text-shadow: 1px 3px 8px rgb(97, 95, 95);
+}
 
 /* FORMULARIOS */
 .form-center {

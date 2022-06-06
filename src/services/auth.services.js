@@ -13,8 +13,8 @@ const verifyService = () => {
     return service.get("/auth/verify")
 }
 
-const editProfileService = (user) => { // Editar el perfil del usuario
-    return service.patch(`/profile/${user.id}/edit`)
+const editProfileService = (id, updateUser) => { // Editar el perfil del usuario
+    return service.patch(`/profile/${id}/edit`, updateUser)
 }
 
 const getProfileDetailsService = (id) => { // Mostramos los detalles del Perfil del Usuario

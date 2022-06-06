@@ -20,12 +20,20 @@ function ProfileEdit() {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
-      const updateProfile = {
-        username,
-        email,
-        image,
-        password
-      }
+      const updateProfile = new FormData()
+      updateProfile.append("username", username)
+      updateProfile.append("image", e.target.files[0])
+      updateProfile.append("email", email)
+      updateProfile.append("password", password)
+
+      console.log(updateProfile)
+      
+      // const updateProfile = {
+      //   username,
+      //   email,
+      //   image,
+      //   password
+      // }
       await editProfileService(id, updateProfile)
       navigate(`/profile/${id}`)
     } catch (error) {
@@ -35,8 +43,10 @@ function ProfileEdit() {
   }
 
   return (
-    <div><div id="login-form"><h1>Editar Perfil</h1>
-    <form onsubmit={handleSubmit}>
+    <div>
+      <div id="login-form">
+        <h1>Editar Perfil</h1>
+    <form onSubmit={handleSubmit}>
         <div>
             <input type="text" name="username"  onChange={handleUsername} value={username}/>
             <label htmlFor="username">Usuario</label>
@@ -62,7 +72,8 @@ function ProfileEdit() {
         <button type="submit">Actualizar</button>
     
     </form>
-    </div>   </div>
+    </div>
+    </div>
   )
 }
 

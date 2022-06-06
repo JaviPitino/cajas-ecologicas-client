@@ -22,13 +22,16 @@ function Profile() {
       navigate('/error')
     }
   }
+  if (!profileDetails ) {
+    return <h3>...Loading...</h3>
+  }
   
   return (
     <div>
       <h3>Perfil del Usuario git push </h3>
       {/* <h4>Usuario: {profileDetails.username}</h4>
       <Link to={`/profile/${id}/edit`}><button>Editar Perfil</button></Link> */}
-      <Link to={`/`}><button>Editar Perfil</button></Link>
+      <Link to={`/profile/${profileDetails._id}/edit`}><button>Editar Perfil</button></Link>
     </div>
   )
 }
