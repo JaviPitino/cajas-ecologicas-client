@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginService, verifyService } from "../../services/auth.services";
+import { loginService } from "../../services/auth.services";
 import { AuthContext } from "../../context/auth.context";
 import { Button } from "react-bootstrap";
 
