@@ -29,6 +29,7 @@ import NavbarTop from "./components/NavbarTop";
 import IsPrivate from "./components/IsPrivate";
 import IsFarmer from "./components/IsFarmer";
 import IsClient from "./components/IsClient";
+import ClientBoxes from "./pages/client/ClientBoxes";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/alimentos/create" element={<IsPrivate><IsFarmer><FoodCreate /></IsFarmer> </IsPrivate>} />
         {/*  Clientes */}
         <Route path="/cliente" element={<IsPrivate><IsClient><ClientView /></IsClient></IsPrivate>} />
+        <Route path="/:id/cliente" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
         {/* Acceso sin credenciales */}
         <Route path="/alimentos" element={<FoodsList />} />
         <Route path="/alimentos/:id" element={<FoodDetails />} />

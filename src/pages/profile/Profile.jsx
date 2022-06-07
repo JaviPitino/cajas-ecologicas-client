@@ -28,7 +28,7 @@ function Profile() {
   
   return (
     <div>
-      <h3>Perfil del Usuario git push </h3>
+      <h3> Bienvenido: <strong>{profileDetails.username}</strong>  </h3>
       
       <Link to={`/profile/${profileDetails._id}/edit`}><button>Editar Perfil</button></Link>
     </div>

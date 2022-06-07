@@ -4,8 +4,8 @@ const addNewBoxService = (newBox) => {
   return service.post('/cajas/create', newBox)
 }
 
-const findBoxesService = () => {
-  return service.get(`/cajas`)
+const findBoxesService = (id) => {
+  return service.get(`${id}/cajas`)
 }
 
 const detailsBoxesService = (id) => {

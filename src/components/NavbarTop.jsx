@@ -16,16 +16,16 @@ function NavbarTop() {
       {isLogin === true ? (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">Cajas Ecologicas</Navbar.Brand>
+            <Navbar.Brand href="/">LOGO</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/alimentos">De la Huerta</Nav.Link>
-                <Nav.Link href="/cajas/create"> Tu EcoCaja </Nav.Link>
+                <Nav.Link href="/cajas/create"> EcoCajas </Nav.Link>
                 <NavDropdown title="Menu" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
+                  <NavDropdown.Item href="/profile">Perfil</NavDropdown.Item>
+                  <NavDropdown.Item href="/infocajas">
+                    Mis cajas
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">
                     Something
@@ -47,7 +47,7 @@ function NavbarTop() {
       ) : (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">Cajas Ecologicas</Navbar.Brand>
+            <Navbar.Brand href="/">LOGO</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
