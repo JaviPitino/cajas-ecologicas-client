@@ -30,9 +30,9 @@ function FarmerBoxes() {
     { myBoxes.length === 0 ? (<Link to={'/cajas/create'}> <h5 >No tienes ninguna caja creada</h5> <Button> Crea tu caja </Button> </Link>) 
       : ( myBoxes.map((eachBox) => {
             return (
-          <li> {
-            <Link to={`/cajas/${eachBox._id}`}>{eachBox.name}</Link>
-            }</li>
+          <div> {
+            <Link to={`/cajas/${eachBox._id}`}><img src={eachBox.image} alt="caja" /> <br />{eachBox.name}</Link>
+            }</div>
           )
           }
         )
