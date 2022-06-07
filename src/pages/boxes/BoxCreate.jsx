@@ -30,7 +30,7 @@ function BoxCreate() {
       const response = await verifyService()
       setFarmer(response.data._id)
       await addNewBoxService(newBox)
-      navigate('/')
+      navigate(`/agricultores/${farmer}/cajas`)
     } catch (error) {
       navigate('/error')
     }

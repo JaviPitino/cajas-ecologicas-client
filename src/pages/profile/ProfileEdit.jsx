@@ -36,8 +36,6 @@ function ProfileEdit() {
     }
   };
 
-
-
   return (
     <div>
       <div id="login-form">
