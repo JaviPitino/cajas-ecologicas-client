@@ -20,12 +20,18 @@ function Signup() {
   const handleUsernameChange = (e) => setUserName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleIsFarmerChange = (e) => setIsFarmer(e.target.checked)
+  const handleIsFarmerChange = (e) => setIsFarmer(!isFarmer)
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
-    const user = { username, email, password };
+    console.log(isFarmer)
+    let youFarmer;
+    if (isFarmer === true ){
+      youFarmer = "farmer"
+    }else {
+      youFarmer = "client"
+    }
+    const user = { username, email, password, role:youFarmer };
 
     try {
       await signupService(user);
@@ -51,12 +57,10 @@ function Signup() {
           name="farmer"
           onChange={handleIsFarmerChange}
           checked={isFarmer}
-          />
+        />
         <span className="slider"></span>
       </label>
       <br />
- 
-      
         <br />
         <label>Nombre: </label>
         <input

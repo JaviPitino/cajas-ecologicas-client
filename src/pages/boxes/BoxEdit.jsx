@@ -18,7 +18,10 @@ function BoxEdit() {
   const handleNameChange = (e) => setName(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
   const handleBoxmodelChange = (e) => setBoxmodel(e.target.value);
-  const handleFoodsChange = (e) => setFoods(e.target.value);
+  const handleFoodsChange = (e) => 
+  { const value = Array.from(e.target.selectedOptions, (option) => option.value);
+    setFoods(value)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +33,7 @@ function BoxEdit() {
         foods,
       };
       await editBoxesService(id, theBox);
-      navigate(`/cajas/${id}/details`);
+      navigate(`/cajas/${id}`);
     } catch (error) {
       navigate("/error");
     }
@@ -55,8 +58,6 @@ function BoxEdit() {
     }
   };
 
-  console.log(allFoods)
-
   return (
     <div key={id}>
       BoxEdit
@@ -69,7 +70,7 @@ function BoxEdit() {
           onChange={handleNameChange}
         />
         <br />
-        <label htmlFor="boxmodel">Pequeña</label>
+        {/* <label htmlFor="boxmodel">Pequeña</label>
         <input
           type="checkbox"
           name="boxmodel"
@@ -92,7 +93,16 @@ function BoxEdit() {
           onChange={handleBoxmodelChange}
           value={boxmodel}
         />
-        <br />
+        <br /> */}
+        
+        <label htmlFor="boxmodel" >Precio</label>
+        <input
+          type="text"
+          name="boxmodel"
+          value={boxmodel}
+          onChange={handleBoxmodelChange}
+          
+        />
 
         <label htmlFor="price" >Precio</label>
         <input
@@ -104,17 +114,21 @@ function BoxEdit() {
         />
         <div>
           <div>
-          <select
-              defaultValue={allFoods[0]}
+          <select 
               name="foods"
-              multiple="true"
-              onChange={handleFoodsChange}>
-              {allFoods.map((eachFood) => {
-                return (
-                  <option value={eachFood.name}>{eachFood.name}</option>
-                );
+              multiple
+              onChange={handleFoodsChange}
+              > 
+              {allFoods.map((eachFood)=> {
+                return(
+                  <>
+                  <option value={eachFood._id}>
+                    {eachFood.name}
+                  </option>
+                  </>
+                )
               })}
-            </select>
+              </select>
             {/* <Select
             closeMenuOnSelect={false}
             components={makeAnimated}

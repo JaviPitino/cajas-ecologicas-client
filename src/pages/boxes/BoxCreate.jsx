@@ -6,6 +6,7 @@ import { addNewBoxService } from '../../services/box.services'
 import { getAllFoodsService } from '../../services/foods.services'
 import { verifyService } from '../../services/auth.services';
 import { Button } from 'react-bootstrap'
+import Select from 'react-select';
 
 function BoxCreate() {
   const [ name, setName ] = useState("");
@@ -18,7 +19,10 @@ function BoxCreate() {
 
   const handleNameChange = (e) => setName(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
-  const handleFoodsChange = (e) => setFoods(e.target.value);
+  const handleFoodsChange = (e) => 
+  { const value = Array.from(e.target.selectedOptions, (option) => option.value);
+    setFoods(value)
+  }
   
 
   const handleSubmit = async (e) => {
@@ -30,7 +34,7 @@ function BoxCreate() {
       const response = await verifyService()
       setFarmer(response.data._id)
       await addNewBoxService(newBox)
-      navigate(`/agricultores/${farmer}/cajas`)
+      navigate(`/cajas`)
     } catch (error) {
       navigate('/error')
     }
@@ -71,7 +75,7 @@ function BoxCreate() {
           <div>
             <select 
               name="foods"
-              multiple={true}
+              multiple
               onChange={handleFoodsChange}
               > 
               {allFoods.map((eachFood)=> {

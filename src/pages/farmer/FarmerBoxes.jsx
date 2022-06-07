@@ -5,53 +5,39 @@ import { AuthContext } from "../../context/auth.context";
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
 function FarmerBoxes() {
-  const { user } = useContext(AuthContext);
   const navigate = useNavigate()
-
-  const [ farmerHaveBox, setFarmerHaveBox ] = useState([])
-  const [ allBoxes, setAllBoxes ] = useState([])
-
-
+  const [ myBoxes, setMyBoxes ] = useState([])
   useEffect(() =>{
-    getBoxesByFarmer()
+    getBoxes()
   }, [])
 
-    const getBoxesByFarmer = async () => {
-
-      console.log(user._id)
-
+  const getBoxes = async () => {
+    
     try {
-
       const response = await findBoxesService()
-      setAllBoxes(response.data)
-      console.log("DATA", response.data)
-      console.log("Este es el logueado", user._id)
-
-  
+      setMyBoxes(response.data)
     } catch (error) {
       navigate('/error')
     }
   }
 
- 
-
-  if (!allBoxes) {
+  if (!myBoxes) {
     return <h3>...Loading...</h3>
   }
   return (
     <div>
-     {
-       
-       allBoxes.map((eachBox) => {
-         return (
-          
-            <li>  {user._id === eachBox.farmer && eachBox.name} </li> 
-
-         )
-       })
-     }
+    { myBoxes.length === 0 ? (<Link to={'/cajas/create'}> <h5 >No tienes ninguna caja creada</h5> <Button> Crea tu caja </Button> </Link>) 
+      : ( myBoxes.map((eachBox) => {
+            return (
+          <li> {
+            <Link to={`/cajas/${eachBox._id}`}>{eachBox.name}</Link>
+            }</li>
+          )
+          }
+        )
+      )
+    }
     </div>
   )
 }
@@ -59,4 +45,3 @@ function FarmerBoxes() {
 export default FarmerBoxes
 
 
-{/* <Link to={'/cajas/create'}> <h5 >No tienes ninguna caja creada</h5> <Button> Crea tu caja </Button> </Link> */}
