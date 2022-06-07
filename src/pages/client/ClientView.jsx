@@ -41,9 +41,9 @@ function ClientView() {
           return (
             <ListGroup className='list-group'>
               <ListGroup.Item >
-                <Link className="list-client"to={`/agricultores/${eachFarmer._id}/cajas`}>
-                   <strong>{eachFarmer.username.toUpperCase()}</strong>
-                   <br />
+                <Link className="list-client"to={`/${eachFarmer._id}/cajas`}>
+                  <strong>{eachFarmer.username.toUpperCase()}</strong>
+                  <br />
                 </Link>
               </ListGroup.Item>
             </ListGroup>

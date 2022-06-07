@@ -17,6 +17,7 @@ import ClientView from "./pages/client/ClientView";
 import FarmerBoxes from "./pages/farmer/FarmerBoxes";
 import Farmer from "./pages/farmer/Farmer";
 import InfoBoxes from "./pages/InfoNologin/InfoBoxes";
+import BoxesByFarmer from "./pages/boxes/BoxesByFarmer";
 
 //Errors
 import Error from "./pages/Error"
@@ -27,9 +28,9 @@ import NavbarTop from "./components/NavbarTop";
 
 //auth
 import IsPrivate from "./components/IsPrivate";
-import IsFarmer from "./components/IsFarmer";
-import IsClient from "./components/IsClient";
 import ClientBoxes from "./pages/client/ClientBoxes";
+import TheRol from "./components/TheRol";
+
 
 function App() {
   return (
@@ -52,16 +53,17 @@ function App() {
         />
         <Route path="/profile/:id/edit" element={<ProfileEdit />} />
         {/* Cajas */}
-        <Route path="/cajas/create" element={<IsPrivate> <IsFarmer><BoxCreate /></IsFarmer> </IsPrivate>} />
+        <Route path="/cajas/create" element={<IsPrivate> <TheRol><BoxCreate /></TheRol> </IsPrivate>} />
         <Route path="/cajas/:id" element={<BoxDetails />} />
-        <Route path="/cajas/:id/edit" element={<IsPrivate> <IsFarmer><BoxEdit /></IsFarmer> </IsPrivate>} />
+        <Route path="/cajas/:id/edit" element={<IsPrivate> <TheRol><BoxEdit /></TheRol> </IsPrivate>} />
         {/* Agricultor */}
-        <Route path="/agricultor" element={<IsPrivate> <IsFarmer><Farmer /></IsFarmer> </IsPrivate>} />
-        <Route path="/agricultores/:id/cajas" element={<IsPrivate><FarmerBoxes /></IsPrivate>} /> 
-        <Route path="/alimentos/create" element={<IsPrivate><IsFarmer><FoodCreate /></IsFarmer> </IsPrivate>} />
+        <Route path="/agricultor" element={<IsPrivate> <TheRol><Farmer /></TheRol> </IsPrivate>} />
+        <Route path="/cajas" element={<IsPrivate><FarmerBoxes /></IsPrivate>} /> 
+        <Route path="/alimentos/create" element={<IsPrivate><TheRol><FoodCreate /></TheRol> </IsPrivate>} />
         {/*  Clientes */}
-        <Route path="/cliente" element={<IsPrivate><IsClient><ClientView /></IsClient></IsPrivate>} />
-        <Route path="/:id/cliente" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
+        <Route path="/cliente" element={<IsPrivate><TheRol><ClientView /></TheRol></IsPrivate>} />
+        <Route path="/:id/cliente" element={<IsPrivate><TheRol><ClientBoxes /></TheRol></IsPrivate>} />
+        <Route path="/:id/cajas" element={<IsPrivate><TheRol><BoxesByFarmer /></TheRol></IsPrivate>} />
         {/* Acceso sin credenciales */}
         <Route path="/alimentos" element={<FoodsList />} />
         <Route path="/alimentos/:id" element={<FoodDetails />} />

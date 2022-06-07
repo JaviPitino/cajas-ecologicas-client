@@ -3,15 +3,19 @@ import { useContext }  from 'react'
 import { Navigate } from 'react-router'
 import { AuthContext } from '../context/auth.context'
 
-function IsClient(props) {
+function TheRol(props) {
   const { user } = useContext(AuthContext)
-  if (user.role === "client"){
+  if (user.role === "farmer"){
     return props.children
-  }else if (user.role === "farmer"){
-    return <Navigate to='/cliente'/>
+  }
+  if (user.role === "client"){
+    return (
+      <Navigate to='/cliente'/>,
+      props.children
+    )
   }else{
     return <Navigate to='/login' />
   }
 }
 
-export default IsClient
+export default TheRol

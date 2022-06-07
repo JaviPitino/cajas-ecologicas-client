@@ -11,19 +11,19 @@ function ClientBoxes() {
     const navigate = useNavigate();
 
     useEffect(() => {
-       getBoxesByClient();
+      getBoxesByClient();
     }, [])
 
     const getBoxesByClient = async () => {
 
-        try {
-             const response = await clientBoxesService()
-             setAllBoxes(response.data)
-             console.log("Cliente data", response.data)
-             
-        } catch(error) {
-            navigate('/error')
-        }
+      try {
+        const response = await clientBoxesService(user._id)
+        setAllBoxes(response.data)
+        console.log("Cliente data", response.data)
+
+      } catch(error) {
+              navigate('/error')
+      }
     }
   return (
 

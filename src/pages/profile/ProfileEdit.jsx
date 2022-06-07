@@ -26,15 +26,17 @@ function ProfileEdit() {
       updateProfile.append("username", username);
       updateProfile.append("image", inputImg.files[0]);
       updateProfile.append("email", email);
-     // updateProfile.append("password", password)
+      // updateProfile.append("password", password)
 
-      //console.log(updateProfile);
+      
       editProfileService(id, updateProfile);
       navigate(`/profile/${id}`);
     } catch (error) {
       navigate("/error");
     }
   };
+
+
 
   return (
     <div>
