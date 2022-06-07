@@ -24,14 +24,16 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    // console.log(isFarmer)
-    // let youFarmer;
-    // if (isFarmer === true ){
-    //   youFarmer = "farmer"
-    // }else {
-    //   youFarmer = "client"
-    // }
-    const user = { username, email, password };
+    console.log(isFarmer)
+  let youFarmer="";
+  if (isFarmer === true ){
+    youFarmer = "farmer"
+  }else {
+    youFarmer = "client"
+  }
+  console.log(youFarmer)
+  const user = { username, email, password, role:youFarmer};
+  console.log("el rol del usuario es", user.role)
 
     try {
       await signupService(user);

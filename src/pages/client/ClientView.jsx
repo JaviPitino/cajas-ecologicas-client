@@ -25,9 +25,6 @@ function ClientView() {
     }
   };
 
-
-  //! AQUI TENDREMOS UN CONDICIONAL SEGUN LA IDE DEL PAYLOAD Y SI TIENE CAJAS EL CLIENTE EN LA DB
-
   return (
     <div>
       <div>
@@ -43,6 +40,7 @@ function ClientView() {
               <ListGroup.Item >
                 <Link className="list-client"to={`/${eachFarmer._id}/cajas`}>
                   <strong>{eachFarmer.username.toUpperCase()}</strong>
+                  <img src={eachFarmer.image} alt="avatar" />
                   <br />
                 </Link>
               </ListGroup.Item>
