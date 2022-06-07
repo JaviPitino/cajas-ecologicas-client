@@ -43,10 +43,9 @@ function FarmerBoxes() {
   return (
     <div>
      {
-       
-       allBoxes.map((eachBox) => {
+      allBoxes.map((eachBox) => {
          return (
-          
+
             <li>  {user._id === eachBox.farmer && eachBox.name} </li> 
 
          )

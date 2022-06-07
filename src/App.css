@@ -75,11 +75,10 @@
   }
   
   .caption h2{
-
+    padding-top: 60px;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
-    margin-top: 200px;
     width: 180px;
     text-align: left;
     text-shadow: 1px 3px 8px rgb(97, 95, 95);
@@ -101,6 +100,60 @@
 }
 
  @media (max-width: 576px) {
+
+  /* ELEMENTO CHECKBOX */
+  .switch {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: olive;
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px olive;
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
+
   .caption {
     font-size: 1.8em;
     height: 100vh;
@@ -109,7 +162,7 @@
   }
   
   .caption h2{
-    padding-top: 100px;
+    padding-top: 80px;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
@@ -136,6 +189,60 @@
 
  
 @media (min-width: 576px) and (max-width: 767.98px) {
+
+  /* ELEMENTO CHECKBOX */
+  .switch {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: olive;
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px olive;
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
+
   .caption {
     font-size: 2em;
     height: 100vh;
@@ -144,7 +251,7 @@
   }
   
   .caption h2{
-    padding-top: 250px;
+    padding-top: 60px;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
@@ -169,24 +276,118 @@
     height: 100vh;
   }
 
+   /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: olive;
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px olive;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
 } 
 
 @media (min-width: 768px) and (max-width: 991.98px) { 
+
+/* ELEMENTO CHECKBOX */
+.switch {
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: olive;
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px olive;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
   
   .caption {
     font-size: 2.5em;
     height: 100vh;
     display: flex;
     flex-direction: column;
-  
   }
   
   .caption h2{
-    /* padding-top: 0px; */
+    padding-top: 80px;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
-    margin-top: 250px;
     width: 250px;
     text-align: left;
     text-shadow: 1px 3px 8px rgb(97, 95, 95);
@@ -225,12 +426,12 @@
   }
   
   .caption h2{
-    padding-top: 220px;
+    padding-top: 100px;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
     /* margin-top: 180px; */
-    width: 300px;
+    width: 320px;
     text-align: left;
     text-shadow: 1px 3px 8px rgb(97, 95, 95);
   }
@@ -249,7 +450,104 @@
   .image-carousel {
     height: 100vh;
   }
-} 
+  /* ELEMENTO CHECKBOX */
+  .switch {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: olive;
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px olive;
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.5em);
+   }
+
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: olive;
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px olive;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
 
 @media (min-width: 1200px) {
   .texto-foto {
@@ -277,10 +575,10 @@
   }
   
   .caption h2{
-    padding-top: 150px;
+    padding-top: 120px;
     font-weight: bolder;
     font-size: 1.3em;
-    width: 380px;
+    width: 390px;
     height: 80vh;
     text-align: left;
     text-shadow: 1px 3px 8px rgb(97, 95, 95);
