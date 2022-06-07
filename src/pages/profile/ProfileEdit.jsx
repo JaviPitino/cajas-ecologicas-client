@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { editProfileService } from "../../services/auth.services";
+import { uploadService } from '../../services/profile.services'
 
 function ProfileEdit() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function ProfileEdit() {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
   //const [ password, setPassword ] = useState("")
 
   const handleUsername = (e) => setUsername(e.target.value);
@@ -19,24 +20,32 @@ function ProfileEdit() {
     e.preventDefault();
     console.log("haciendo submit")
     try {
-      const updateProfile = new FormData();
-      console.log(e.target)
-      const inputImg = e.target.querySelector("#img")
-      console.log(inputImg.files[0])
-      updateProfile.append("username", username);
-      updateProfile.append("image", inputImg.files[0]);
-      updateProfile.append("email", email);
-      // updateProfile.append("password", password)
-
-      
-      editProfileService(id, updateProfile);
+        const updateProfile = {
+          username,
+          email,
+          image
+        };
+  
+      await editProfileService(id, updateProfile);
       navigate(`/profile/${id}`);
     } catch (error) {
       navigate("/error");
     }
   };
 
+  const handleImageChange = async (e) => {
 
+    const uploadForm = new FormData()
+    uploadForm.append("image", e.target.files[0])
+
+    try {
+      const response = await uploadService(uploadForm)
+      setImage(response.data)
+
+    } catch(error) {
+      navigate("/error")
+    }
+  }
 
   return (
     <div>
@@ -52,11 +61,6 @@ function ProfileEdit() {
               value={username}
             />
           </div>
-          {/* <div>
-            <input type="password" name="password"  onChange={handlePassword} value={email}/>
-            <label htmlFor="password">Contraseña</label>
-        </div> */}
-
           <div>
             <label htmlFor="email">Email</label>
             <input
@@ -71,11 +75,12 @@ function ProfileEdit() {
             <br />
             <label htmlFor="image">Imagen</label>
             <br />
-            <input type="file" id="img" name="image"/>
+            <input type="file" id="img" name="image" onChange={handleImageChange} />
           </div>
           <br />
           <button type="submit">Actualizar</button>
         </form>
+        <img src={image} alt="imagen perfil" />
       </div>
     </div>
   );

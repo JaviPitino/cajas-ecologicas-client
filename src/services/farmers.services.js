@@ -8,7 +8,6 @@ const oneFarmerService = (id) => {
   return service.get(`/agricultor`,id)
 }
 
-
 export {
   allFarmersService,
   oneFarmerService

@@ -13,7 +13,7 @@ function Signup() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isFarmer, setIsFarmer] = useState(false);
+  const [isFarmer, setIsFarmer] = useState();
   const [errorMessage, setErrorMessage] = useState(null);
 
   // Eventos handlers
@@ -24,14 +24,14 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    console.log(isFarmer)
-    let youFarmer;
-    if (isFarmer === true ){
-      youFarmer = "farmer"
-    }else {
-      youFarmer = "client"
-    }
-    const user = { username, email, password, role:youFarmer };
+    // console.log(isFarmer)
+    // let youFarmer;
+    // if (isFarmer === true ){
+    //   youFarmer = "farmer"
+    // }else {
+    //   youFarmer = "client"
+    // }
+    const user = { username, email, password };
 
     try {
       await signupService(user);

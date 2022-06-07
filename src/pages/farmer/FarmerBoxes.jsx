@@ -27,17 +27,6 @@ function FarmerBoxes() {
   }
   return (
     <div>
-<<<<<<< HEAD
-     {
-      allBoxes.map((eachBox) => {
-         return (
-
-            <li>  {user._id === eachBox.farmer && eachBox.name} </li> 
-
-         )
-       })
-     }
-=======
     { myBoxes.length === 0 ? (<Link to={'/cajas/create'}> <h5 >No tienes ninguna caja creada</h5> <Button> Crea tu caja </Button> </Link>) 
       : ( myBoxes.map((eachBox) => {
             return (
@@ -49,7 +38,6 @@ function FarmerBoxes() {
         )
       )
     }
->>>>>>> 0c26a4b0ce9c7c67faf50ed2d67b4aa8043f4be4
     </div>
   )
 }
