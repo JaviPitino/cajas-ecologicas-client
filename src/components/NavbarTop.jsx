@@ -30,7 +30,7 @@ function NavbarTop() {
                 </IsFarmer>
                 <IsClient>  
                   <Nav.Link as={NavLink} to="/cliente"> Resumen </Nav.Link>
-                  <Nav.Link as={NavLink} to="/:id/cliente"> Mis Ecocajas </Nav.Link>
+                  <Nav.Link as={NavLink} to="/miscajas"> Mis Ecocajas </Nav.Link>
                 </IsClient>
             </Nav>
               <Nav>

@@ -7,6 +7,7 @@ function BoxesByFarmer() {
   const navigate = useNavigate()
   const { id } = useParams()
   const [ allBoxesByFarmer, setallBoxesByFarmer ] = useState()
+  const [ productToBuy, setproductToBuy] = useState(null)
   
   useEffect(() => {
     getBoxesByFarmer()
@@ -20,7 +21,8 @@ function BoxesByFarmer() {
       navigate('/')
     }
   }
-  
+
+    
   if (!allBoxesByFarmer) return <h3>...Loading</h3>
 
   return (

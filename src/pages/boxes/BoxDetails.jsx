@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import IsClient from '../../components/IsClient'
 import IsFarmer from '../../components/IsFarmer'
-import { detailsBoxesService, deleteBoxService } from '../../services/box.services'
+import { AuthContext } from '../../context/auth.context'
+import { detailsBoxesService, deleteBoxService, editBoxesService } from '../../services/box.services'
+import  PaymentIntent  from './PaymentIntent'
 
 
 function BoxDetails() {
+  const { user } = useContext(AuthContext)
   const navigate = useNavigate()
   const { id } = useParams()
   const [ boxDetails, setBoxDetails ] = useState(null)
+  const [ productToBuy, setproductToBuy] = useState(null)
+
   useEffect(() => {
     getBoxDetails()
   },[])
@@ -31,6 +36,19 @@ function BoxDetails() {
     }
   }
 
+  const handleBuy = async (productToBuy) => {
+    
+    try {
+      setproductToBuy(productToBuy)
+      const updateBox = {
+        client: user._id
+      }
+      await editBoxesService(id, updateBox)
+    } catch (error) {
+      navigate('/error')
+    }
+    
+  }
   
   
   if (boxDetails === null ){
@@ -53,13 +71,19 @@ function BoxDetails() {
           )
         })
       }
+      <br />
+      <h4>{boxDetails.price}<span> €</span></h4>
       <IsFarmer><Link to={`/cajas/${id}/edit`}>
         <button>Editar</button>
       </Link>
       <button onClick={handleDelete}>Borrar</button>
       </IsFarmer>
       <IsClient>
-      <button >Comprar</button>
+      <button onClick={() => handleBuy(boxDetails)}>Comprar</button>
+      {
+        productToBuy &&  
+        <><h3>Comprar Ecocaja</h3><PaymentIntent productToBuy={productToBuy}/></>
+      }
       </IsClient>
       
     </div>

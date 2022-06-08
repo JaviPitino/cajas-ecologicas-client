@@ -64,7 +64,7 @@ function App() {
         <Route path="/alimentos/create" element={<IsPrivate><IsFarmer><FoodCreate /></IsFarmer> </IsPrivate>} />
         {/*  Clientes */}
         <Route path="/cliente" element={<IsPrivate><IsClient><ClientView /></IsClient></IsPrivate>} />
-        <Route path="/:id/cliente" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
+        <Route path="/miscajas" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
         <Route path="/:id/cajas" element={<IsPrivate><IsClient><BoxesByFarmer /></IsClient></IsPrivate>} />
         {/* Acceso sin credenciales */}
         <Route path="/alimentos" element={<FoodsList />} />
