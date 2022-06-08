@@ -19,25 +19,25 @@ function NavbarTop() {
       {isLogin === true ? (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">LOGO</Navbar.Brand>
+            <Navbar.Brand as={NavLink} to="/">LOGO</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/alimentos">Productos De la Huerta</Nav.Link>
+                <Nav.Link as={NavLink} to="/alimentos">Productos De la Huerta</Nav.Link>
                 <IsFarmer>  
-                  <Nav.Link href="/cajas/create"> Crear EcoCajas </Nav.Link>
-                  <Nav.Link href="/cajas"> Mis Ecocajas </Nav.Link>
+                  <Nav.Link as={NavLink} to="/cajas/create"> Crear EcoCajas </Nav.Link>
+                  <Nav.Link as={NavLink} to="/cajas"> Mis Ecocajas </Nav.Link>
                 </IsFarmer>
                 <IsClient>  
-                  <Nav.Link href="/cliente"> Resumen </Nav.Link>
-                  <Nav.Link href="/:id/cliente"> Mis Ecocajas </Nav.Link>
+                  <Nav.Link as={NavLink} to="/cliente"> Resumen </Nav.Link>
+                  <Nav.Link as={NavLink} to="/:id/cliente"> Mis Ecocajas </Nav.Link>
                 </IsClient>
             </Nav>
               <Nav>
-                <Nav.Link href="/profile">
+                <Nav.Link as={NavLink} to="/profile">
                   <p>{(user.username).toUpperCase()} </p>
                 </Nav.Link>
-                <Nav.Link onClick={handleLogOut} href="/">
+                <Nav.Link onClick={handleLogOut} as={NavLink} to="/">
                   Cerrar sesión
                 </Nav.Link>
               </Nav>
@@ -47,16 +47,16 @@ function NavbarTop() {
       ) : (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">LOGO</Navbar.Brand>
+            <Navbar.Brand as={NavLink} to="/">LOGO</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/alimentos">De la Huerta</Nav.Link>
-                <Nav.Link href="/infocajas"> Nuestras Ecocajas </Nav.Link>
+                <Nav.Link as={NavLink} to="/alimentos">De la Huerta</Nav.Link>
+                <Nav.Link as={NavLink} to="/infocajas"> Nuestras Ecocajas </Nav.Link>
               </Nav>
               <Nav>
-                <Nav.Link href="/signup">Regístrate</Nav.Link>
-                <Nav.Link href="/login">Accede</Nav.Link>
+                <Nav.Link as={NavLink} to="/signup">Regístrate</Nav.Link>
+                <Nav.Link as={NavLink} to="/login">Accede</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
