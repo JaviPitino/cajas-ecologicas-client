@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Llamadas al Backend
 const service = axios.create({
-    baseURL: "http://localhost:5005/api"
+    baseURL: `${process.env.REACT_APP_SERVER_URL}/api`
 })
 
 // Aquí se envía el Token al Backend
