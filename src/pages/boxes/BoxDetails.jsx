@@ -6,6 +6,7 @@ import IsFarmer from '../../components/IsFarmer'
 import { AuthContext } from '../../context/auth.context'
 import { detailsBoxesService, deleteBoxService, editBoxesService } from '../../services/box.services'
 import  PaymentIntent  from './PaymentIntent'
+import { Button } from 'react-bootstrap'
 
 
 function BoxDetails() {
@@ -57,7 +58,7 @@ function BoxDetails() {
   
   return (
     <div key={id}>
-      {boxDetails.name}
+      <h3> {boxDetails.name} </h3>
 
       <h4>Tipo:{boxDetails.boxmodel}</h4>
       {
@@ -65,7 +66,7 @@ function BoxDetails() {
           return(
             
             <div><img src={eachFood.image} alt="" width={70}/>
-              <li>{eachFood.name}</li>
+              <li className='list-client'>{eachFood.name}</li>
             </div>
             
           )
@@ -74,12 +75,12 @@ function BoxDetails() {
       <br />
       <h4>{boxDetails.price}<span> €</span></h4>
       <IsFarmer><Link to={`/cajas/${id}/edit`}>
-        <button>Editar</button>
+        <Button variant="success">Editar</Button>
       </Link>
-      <button onClick={handleDelete}>Borrar</button>
+      <Button variant="success" onClick={handleDelete}>Borrar</Button>
       </IsFarmer>
       <IsClient>
-      <button onClick={() => handleBuy(boxDetails)}>Comprar</button>
+      <Button variant="success" onClick={() => handleBuy(boxDetails)}>Comprar</Button>
       {
         productToBuy &&  
         <><h3>Comprar Ecocaja</h3><PaymentIntent productToBuy={productToBuy}/></>

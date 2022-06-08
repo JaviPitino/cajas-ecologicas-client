@@ -19,7 +19,7 @@ function CarouselHome() {
         />
         <Carousel.Caption className='caption'>
         <h2 className="titulo-foto">Busca los agricultores más cerca de tu residencia</h2>
-          <p>Podrás buscar entre nuestros agricultores, los que se encuentren más cercanos a tí</p>
+          <p className="text-carousel">Podrás buscar entre nuestros agricultores, los que se encuentren más cercanos a tí</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
@@ -30,7 +30,7 @@ function CarouselHome() {
         />
         <Carousel.Caption className='caption'>
         <h2 className="titulo-foto">Los mejores productos ecológicos de cercanía</h2>
-          <p>Únete a nuestra comunidad y disfruta de una comida, sana, cercana y sostenible</p>
+          <p className="text-carousel" >Únete a nuestra comunidad y disfruta de una comida, sana, cercana y sostenible</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
@@ -40,7 +40,7 @@ function CarouselHome() {
         />
         <Carousel.Caption className='caption'>
           <h2 className="titulo-foto lead">Escoge la Eco-caja que mejor se amolde a tí</h2>
-          <p>Cada agricultor, prepara tres tamaños de cajas diferentes, a las que podrás añadir más alimentos</p>
+          <p className="text-carousel">Cada agricultor, prepara tres tamaños de cajas diferentes, a las que podrás añadir más alimentos</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={4000}>
@@ -51,7 +51,7 @@ function CarouselHome() {
         />
         <Carousel.Caption className='caption'>
         <h2 className="titulo-foto">Cuida del medioambiente, come sano y saludable</h2>
-          <p>Al utilizar nuestro Eco-Huerto cuidarás del mediambiente al contaminar menos</p>
+          <p className="text-carousel">Al utilizar nuestro Eco-Huerto cuidarás del mediambiente al contaminar menos</p>
         </Carousel.Caption>
       </Carousel.Item>
   </Carousel>

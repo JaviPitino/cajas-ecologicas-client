@@ -35,7 +35,7 @@ function ClientBoxes() {
               return (
                 <div> {
                   <Link to={`/cajas/${eachBox._id}`}><img src={eachBox.image} alt="caja" /> <br />{eachBox.name}</Link>
-                  }</div>
+                }</div>
                 )
             })
           )

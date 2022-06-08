@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { findBoxesIdFarmer } from '../../services/box.services'
 import { Link } from 'react-router-dom'
+import { Card, Button, Row, Col } from 'react-bootstrap'
 
 function BoxesByFarmer() {
   const navigate = useNavigate()
@@ -26,20 +27,30 @@ function BoxesByFarmer() {
   if (!allBoxesByFarmer) return <h3>...Loading</h3>
 
   return (
-    <div>BoxesByFarmer
-      {allBoxesByFarmer.map((eachBox) => {
+  <div className="box-container">
+    <Card className="card-container">
+      {
+      allBoxesByFarmer.map((eachBox) => {
         return (
-          <div>
-            <Link to={`/cajas/${eachBox._id}`}>
-              <img src={eachBox.image} alt="" />
-              <p>{eachBox.name}</p>
-            </Link>
-            
-          </div>
+        <>
+          <Card.Img variant="top"/>
+            <Card.Body>
+              <Link to={`/cajas/${eachBox._id}`}>
+                <img src={eachBox.image} alt="" />
+              </Link>
+            <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()} </Card.Title>
+            <Card.Text className="boxes-text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
+            </Card.Text>
+            </Card.Body>
+        </>
         )
-      })
+        })   
+      }            
+    </Card>
+      <br />
       
-      }
+    <Link className="link-btn" to={"/alimentos"}> <Button variant="success" to={"/alimentos"}> Volver </Button> </Link>
     </div>
   )
 }
