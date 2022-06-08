@@ -65,7 +65,7 @@ function BoxDetails() {
         boxDetails.foods.map((eachFood) => {
           return(
             
-            <div><img src={eachFood.image} alt="" width={70}/>
+            <div><img src={eachFood.image} alt="imagen caja" width={70}/>
               <li className='list-client'>{eachFood.name}</li>
             </div>
             
