@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { clientBoxesService } from '../../services/client.services'
-import { Button } from 'react-bootstrap';
+import { Button, Card} from 'react-bootstrap';
 
 function ClientBoxes() {
     const navigate = useNavigate();
@@ -27,19 +27,31 @@ function ClientBoxes() {
     }
 
   return (
-
-    <div>
+    <div className="box-container">
+    <Card className="card-container">
         { clientBoxes.lenght === 0 ? (<Link to={'/cliente'}> <h5>No has comprado ninguna caja</h5> <Button>Compra tu caja</Button></Link>)
           : (
             clientBoxes.map((eachBox) => {
               return (
-                <div> {
-                  <Link to={`/cajas/${eachBox._id}`}><img src={eachBox.image} alt="caja" /> <br />{eachBox.name}</Link>
-                }</div>
-                )
+                <>
+                <Card.Img variant="top" />
+                <Card.Body>
+                <Link className="link" to={`/cajas/${eachBox._id}`}>
+                  <img src={eachBox.image} alt="caja" />
+                  <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()}
+                  </Card.Title>
+                </Link>
+                <Card.Text className="boxes-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
+                </Card.Text>
+                </Card.Body>
+               </>
+
+              )
             })
           )
         }
+        </Card>
     </div>
   )
 
