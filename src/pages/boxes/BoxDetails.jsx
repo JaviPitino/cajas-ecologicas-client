@@ -43,11 +43,11 @@ function BoxDetails() {
       {
         boxDetails.foods.map((eachFood) => {
           return(
-            <Link to={`/alimentos/${eachFood._id}`}>
+            
             <div><img src={eachFood.image} alt="" width={70}/>
               <li>{eachFood.name}</li>
             </div>
-            </Link>
+            
           )
         })
       }

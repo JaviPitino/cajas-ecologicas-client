@@ -29,7 +29,7 @@ function Profile() {
   return (
     <div>
       <h3> Bienvenido: <strong>{profileDetails.username}</strong>  </h3>
-      <img src={profileDetails.image} alt="imagen perfil" />
+      <img src={profileDetails.image} alt="imagen perfil" width={200}/>
       <Link to={`/profile/${profileDetails._id}/edit`}><button>Editar Perfil</button></Link>
     </div>
   )

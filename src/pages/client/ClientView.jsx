@@ -40,7 +40,7 @@ function ClientView() {
               <ListGroup.Item >
                 <Link className="list-client"to={`/${eachFarmer._id}/cajas`}>
                   <strong>{eachFarmer.username.toUpperCase()}</strong>
-                  <img src={eachFarmer.image} alt="avatar" />
+                  <img src={eachFarmer.image} alt="avatar" width={50} />
                   <br />
                 </Link>
               </ListGroup.Item>

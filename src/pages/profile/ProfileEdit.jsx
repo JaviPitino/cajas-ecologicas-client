@@ -27,7 +27,7 @@ function ProfileEdit() {
         };
   
       await editProfileService(id, updateProfile);
-      navigate(`/profile/${id}`);
+      navigate(`/profile`);
     } catch (error) {
       navigate("/error");
     }
