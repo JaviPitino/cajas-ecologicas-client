@@ -2,12 +2,15 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginService } from "../../services/auth.services";
 import { AuthContext } from "../../context/auth.context";
-import { Button } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 
 function Login() {
   // UseContext
   const { authenticateUser, user } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
   const navigate = useNavigate();
 
@@ -51,39 +54,51 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleLogin}>
-        <div className="form-center container-fluid">
-          <div className="row col-4 map_section">
-            <input
-              className="form-control"
-              type="email"
-              name="email"
-              value={email}
-              placeholder="Correo Electrónico"
-              onChange={handleEmailChange}
-            />
-            <br />
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              value={password}
-              placeholder="Inserte su contraseña"
-              onChange={handlePasswordChange}
-            />
-          </div>
-        </div>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Accede
+      </Button>
 
-        {errorMessage !== null && <p> {errorMessage} </p>}
-
-        <Button variant="success" type="submit">
-           Accede
-        </Button>
-
-      </form>
-    </div>
-  );
+      <Modal  show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Accede a Ecocajas</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleLogin}>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Correo Electónico</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={email}
+                placeholder="Correo Electrónico"
+                autoFocus
+                onChange={handleEmailChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                value={password}
+                placeholder="Inserte su contraseña"
+                onChange={handlePasswordChange}
+              />
+            </Form.Group>
+            <Button type="submit" onClick={handleClose}>
+            Acceder
+          </Button>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
 }
 
 export default Login;

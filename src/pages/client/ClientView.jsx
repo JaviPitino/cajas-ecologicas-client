@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { allFarmersService } from "../../services/farmers.services";
 import { getAllFoodsService } from "../../services/foods.services";
-import { ListGroup } from 'react-bootstrap'
+import { ListGroup, Row, Col, Card, Button } from "react-bootstrap";
 
 function ClientView() {
   const navigate = useNavigate();
@@ -26,44 +26,60 @@ function ClientView() {
   };
 
   return (
-    <div>
-      <div>
-        <h4>Escoge tu agricultor</h4>
-        {/* <img src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654429191/carousel/carousel2_we0fr6.jpg" alt="Campo" /> */}
-      </div>
+    <div className="containerCliente">
       <div className="container-list-food">
-      <div>
-        {farmers.map((eachFarmer) => {
-          
-          return (
-            <ListGroup className='list-group'>
-              <ListGroup.Item >
-                <Link className="list-client"to={`/${eachFarmer._id}/cajas`}>
-                  <strong>{eachFarmer.username.toUpperCase()}</strong>
-                  <img src={eachFarmer.image} alt="avatar" width={50} />
-                  <br />
+        <div>
+          <Card border="dark" style={{ width: "12rem" }}>
+            {farmers.map((eachFarmer) => {
+              return (
+                <Link className="list-client" to={`/${eachFarmer._id}/cajas`}>
+                  <Card.Body>
+                    <Card.Img variant="top" src={eachFarmer.image} />
+                    <Card.Title>
+                      <strong>{eachFarmer.username.toUpperCase()}</strong>
+                    </Card.Title>
+                  </Card.Body>
                 </Link>
-              </ListGroup.Item>
-            </ListGroup>
-          );
-        })}
-      </div>
-      <div>
-        {foods.map((eachFood) => {
-          return (
+              );
+            })}
+          </Card>
+        </div>
 
-            <ListGroup className='list-group'>
-              <ListGroup.Item >
-                <Link className="list-client" to={`/alimentos/${eachFood._id}`}>
-                  {eachFood.name} <img src={eachFood.image} width={"30px"} alt="imagen alimento" />
-                </Link>
-              </ListGroup.Item> 
-            </ListGroup>
-           
-          );
-        })}
+        <div className="foodLi">
+          {foods.map((eachFood) => {
+            return (
+              <Card
+                className="foodDet"
+                border="dark"
+                style={{ width: "12rem" }}
+              >
+                <Card.Header>
+                  <Link
+                    className="list-client"
+                    to={`/alimentos/${eachFood._id}`}
+                  >
+                    {eachFood.name}
+                  </Link>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    <Link
+                      className="list-client"
+                      to={`/alimentos/${eachFood._id}`}
+                    >
+                      <img
+                        src={eachFood.image}
+                        width={"70px"}
+                        alt={eachFood.name}
+                      />
+                    </Link>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

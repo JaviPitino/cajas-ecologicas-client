@@ -4,6 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import IsFarmer from "./IsFarmer";
 import IsClient from "./IsClient";
+import Login from "../pages/auth/Login";
 
 
 function NavbarTop() {
@@ -56,7 +57,8 @@ function NavbarTop() {
               </Nav>
               <Nav>
                 <Nav.Link as={NavLink} to="/signup">Regístrate</Nav.Link>
-                <Nav.Link as={NavLink} to="/login">Accede</Nav.Link>
+                <Login/>
+                {/* <Nav.Link as={NavLink} to="/login">Accede</Nav.Link> */}
               </Nav>
             </Navbar.Collapse>
           </Container>

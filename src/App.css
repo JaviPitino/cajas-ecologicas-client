@@ -786,3 +786,13 @@
   transform: translateX(1.5em);
  }
 
+.foodLi {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foodDet{
+  margin: 0.5vh 3vh ;
+}
+
