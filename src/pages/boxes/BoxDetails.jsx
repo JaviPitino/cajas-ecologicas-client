@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
+import IsClient from '../../components/IsClient'
+import IsFarmer from '../../components/IsFarmer'
 import { detailsBoxesService, deleteBoxService } from '../../services/box.services'
 
 
@@ -51,10 +53,15 @@ function BoxDetails() {
           )
         })
       }
-      <Link to={`/cajas/${id}/edit`}>
-      <button>Editar</button>
+      <IsFarmer><Link to={`/cajas/${id}/edit`}>
+        <button>Editar</button>
       </Link>
       <button onClick={handleDelete}>Borrar</button>
+      </IsFarmer>
+      <IsClient>
+      <button >Comprar</button>
+      </IsClient>
+      
     </div>
   )
 }

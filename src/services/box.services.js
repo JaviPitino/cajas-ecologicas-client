@@ -9,7 +9,7 @@ const findBoxesService = () => {
 }
 
 const findBoxesIdFarmer = (idFarmer) => {
-  return service.get(`/${idFarmer}/cajas`)
+  return service.get(`cajas/${idFarmer}/cajas`)
 }
 
 const detailsBoxesService = (idBox) => {

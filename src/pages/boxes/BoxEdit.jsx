@@ -95,7 +95,8 @@ function BoxEdit() {
         />
         <br /> */}
         
-        <label htmlFor="boxmodel" >Precio</label>
+        <label htmlFor="boxmodel" >Tamaño Ecocaja</label>
+        {/* <select name="tamaño" ></select> */}
         <input
           type="text"
           name="boxmodel"
@@ -106,7 +107,7 @@ function BoxEdit() {
 
         <label htmlFor="price" >Precio</label>
         <input
-          type="num"
+          type="number"
           name="price"
           value={price}
           onChange={handlePriceChange}

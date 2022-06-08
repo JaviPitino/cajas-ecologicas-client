@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import TheRol from "./TheRol";
+import IsFarmer from "./IsFarmer";
+import IsClient from "./IsClient";
 
 
 function NavbarTop() {
@@ -22,25 +23,20 @@ function NavbarTop() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/alimentos">De la Huerta</Nav.Link>
-                <Nav.Link href="/cajas/create"> Crear EcoCajas </Nav.Link>
-                <NavDropdown title="Menu" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="/profile">Perfil</NavDropdown.Item>
-                  <TheRol><NavDropdown.Item href="/cajas">
-                    Mis cajas </NavDropdown.Item> </TheRol> 
-                    <NavDropdown.Item href="/cajas">
-                    Mis cajas </NavDropdown.Item> 
-                  
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
+                <Nav.Link href="/alimentos">Productos De la Huerta</Nav.Link>
+                <IsFarmer>  
+                  <Nav.Link href="/cajas/create"> Crear EcoCajas </Nav.Link>
+                  <Nav.Link href="/cajas"> Mis Ecocajas </Nav.Link>
+                </IsFarmer>
+                <IsClient>  
+                  <Nav.Link href="/cliente"> Resumen </Nav.Link>
+                  <Nav.Link href="/:id/cliente"> Mis Ecocajas </Nav.Link>
+                </IsClient>
+            </Nav>
               <Nav>
+                <Nav.Link href="/profile">
+                  <p>{(user.username).toUpperCase()} </p>
+                </Nav.Link>
                 <Nav.Link onClick={handleLogOut} href="/">
                   Cerrar sesión
                 </Nav.Link>
