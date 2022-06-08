@@ -796,3 +796,9 @@
   margin: 0.5vh 3vh ;
 }
 
+.btn-primary{
+  background-color: transparent!important;
+  border-color: transparent!important;
+  box-shadow: none!important;
+}
+
