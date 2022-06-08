@@ -55,11 +55,11 @@ function Login() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+    <Button variant="primary" onClick={handleShow}>
         Accede
       </Button>
 
-      <Modal  show={show} onHide={handleClose}>
+      <Modal id="mastrarmodal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Accede a Ecocajas</Modal.Title>
         </Modal.Header>
@@ -86,15 +86,15 @@ function Login() {
                 onChange={handlePasswordChange}
               />
             </Form.Group>
-            <Button type="submit" onClick={handleClose}>
+            <Button type="submit" variant="success" onClick={handleClose}>
             Acceder
           </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          {/* <Button variant="success" onClick={handleClose}>
             Cerrar
-          </Button>
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>

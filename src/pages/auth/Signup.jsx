@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signupService } from "../../services/auth.services";
 import { Button } from "react-bootstrap"
+import Login from "./Login";
 
 
 function Signup() {
@@ -35,8 +36,8 @@ function Signup() {
     
     try {
       await signupService(user);
-      navigate('/login')
-      } catch (error) {
+      // navigate('/login')
+    } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data.errorMessage);
       } else {
@@ -88,8 +89,8 @@ function Signup() {
 
         {errorMessage !== null && <p>{errorMessage}</p>}
       <br />
-      
-        <Button variant="success" type="submit"> Registrar </Button>
+        
+        <Button variant="success" type="submit" ><Login/></Button>
       </form>
     </div>
   );

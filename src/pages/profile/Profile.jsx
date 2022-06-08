@@ -17,7 +17,6 @@ function Profile() {
     try {
       const response = await getProfileDetailsService(user._id)
       setProfileDetails(response.data)
-      console.log(response)
     } catch (error) {
       navigate('/error')
     }
