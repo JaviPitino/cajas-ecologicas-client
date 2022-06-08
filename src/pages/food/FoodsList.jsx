@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAllFoodsService } from '../../services/foods.services'
 import Search from '../../components/Search'
+import { Button } from 'react-bootstrap'
 
 function FoodsList() {
 
@@ -33,10 +34,19 @@ function FoodsList() {
     setAllFoodsToDisplay(filterArr)
   }
 
+  const handleSort = () => {
+
+    const foodCopyList = [...allFoodsToDisplay]
+    foodCopyList.sort((elem1, elem2) => elem1.name > elem2.name ? 1 : -1)
+    setAllFoodsToDisplay(foodCopyList)
+  }
+
   return (
     <div className="App">
-      <Search searchList={searchList}/>
+      <Search searchList={searchList}/> <Button variant="success" onClick={handleSort} > Ordenar alimentos </Button>
+      
       <div>
+      <br />
         {
           allFoodsToDisplay.map((eachFood) => {
             return (

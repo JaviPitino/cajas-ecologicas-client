@@ -38,8 +38,7 @@ function FoodDetails() {
           foodDetails.season.map((eachFood) => {
             return (
               <div>
-    
-              <li className="link"><strong>{eachFood}</strong></li>
+                <li className="link"><strong>{eachFood}</strong></li>
               </div>
               )
             })
