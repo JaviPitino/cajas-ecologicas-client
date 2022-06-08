@@ -33,17 +33,17 @@ function BoxesByFarmer() {
       allBoxesByFarmer.map((eachBox) => {
         return (
           <>
-            <Card.Img variant="top"/>
-              <Card.Body>
-                <Link className="link" to={`/cajas/${eachBox._id}`}>
-                  <img src={eachBox.image} alt="imagen caja" />
+          <Card.Img variant="top"/>
+            <Card.Body>
+            <Link className="link" to={`/cajas/${eachBox._id}`}>
+                <img src={eachBox.image} alt="imagen caja" />
                 
-              <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()} </Card.Title>
-              </Link>
-              <Card.Text className="boxes-text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
-              </Card.Text>
-              </Card.Body>
+            <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()} </Card.Title>
+            </Link>
+          <Card.Text className="boxes-text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
+          </Card.Text>
+          </Card.Body>
           </>
         )
       })   

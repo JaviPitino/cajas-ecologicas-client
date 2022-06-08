@@ -44,7 +44,7 @@ function FarmerBoxes() {
             </Card.Body>
             </>
           )
-          }
+        }
         )
       )
     }

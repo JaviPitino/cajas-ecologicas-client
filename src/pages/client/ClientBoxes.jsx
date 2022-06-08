@@ -29,29 +29,29 @@ function ClientBoxes() {
   return (
     <div className="box-container">
     <Card className="card-container">
-        { clientBoxes.lenght === 0 ? (<Link to={'/cliente'}> <h5>No has comprado ninguna caja</h5> <Button>Compra tu caja</Button></Link>)
-          : (
-            clientBoxes.map((eachBox) => {
-              return (
-                <>
-                <Card.Img variant="top" />
-                <Card.Body>
-                <Link className="link" to={`/cajas/${eachBox._id}`}>
-                  <img src={eachBox.image} alt="caja" />
-                  <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()}
-                  </Card.Title>
-                </Link>
-                <Card.Text className="boxes-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
-                </Card.Text>
-                </Card.Body>
-               </>
+      { clientBoxes.lenght === 0 ? (<Link to={'/cliente'}> <h5>No has comprado ninguna caja</h5> <Button>Compra tu caja</Button></Link>)
+      : (
+        clientBoxes.map((eachBox) => {
+          return (
+          <>
+          <Card.Img variant="top" />
+            <Card.Body>
+              <Link className="link" to={`/cajas/${eachBox._id}`}>
+                <img src={eachBox.image} alt="caja" />
+              <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()}
+              </Card.Title>
+              </Link>
+            <Card.Text className="boxes-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
+            </Card.Text>
+          </Card.Body>
+          </>
 
-              )
-            })
           )
-        }
-        </Card>
+        })
+      )
+    }
+    </Card>
     </div>
   )
 
