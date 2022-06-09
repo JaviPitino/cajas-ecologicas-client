@@ -39,7 +39,7 @@ function FoodsList() {
   };
 
   if (!allFoodsToDisplay) {
-    return <Button variant="success" disabled>
+    return ( <Button variant="success" disabled>
     <Spinner
       as="span"
       animation="grow"
@@ -48,7 +48,7 @@ function FoodsList() {
       aria-hidden="true"
     />
     Loading...
-  </Button>
+  </Button>)
   }
 
   return (

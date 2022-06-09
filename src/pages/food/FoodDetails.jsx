@@ -11,6 +11,7 @@ function FoodDetails() {
   useEffect(() => {
     getFoodDetails();
   }, []);
+
   const getFoodDetails = async () => {
     try {
       const response = await getFoodDetailsService(id);
@@ -22,7 +23,7 @@ function FoodDetails() {
   };
 
   if (!foodDetails) {
-    return <Button variant="success" disabled>
+    return (<Button variant="success" disabled>
     <Spinner
       as="span"
       animation="grow"
@@ -31,7 +32,7 @@ function FoodDetails() {
       aria-hidden="true"
     />
     Loading...
-  </Button>
+  </Button>)
   }
 
   return (
@@ -61,11 +62,9 @@ function FoodDetails() {
               })}
             </Card.Text>
             <Link className="link-btn" to={"/alimentos"}>
-              {" "}
               <Button variant="success" to={"/alimentos"}>
-                {" "}
-                Volver{" "}
-              </Button>{" "}
+                Volver
+              </Button>
             </Link>
           </Card.Body>
         </Card>
