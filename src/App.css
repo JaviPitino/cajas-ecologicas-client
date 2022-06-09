@@ -648,15 +648,14 @@
   
   .caption{
     font-size: 3em;
-    height: 100vh;
+    height: 95%;
     display: flex;
     flex-direction: column;
-  
   }
   
   .caption h2{
     align-items: center;
-    padding-top: 450px;
+    padding-top: 15%;
     display: flex;
     font-weight: bolder;
     font-size: 1em;
@@ -666,7 +665,7 @@
   }
   
   .caption p{
-    margin-top: 680px;
+    margin-top: 35%;
     font-size: 0.4em;
     width: 300px;
     justify-content: center;
