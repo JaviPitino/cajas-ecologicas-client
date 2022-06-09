@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { getProfileDetailsService } from '../../services/auth.services'
 import { AuthContext } from "../../context/auth.context";
+import { Button} from 'react-bootstrap'
 
 function Profile() {
 
@@ -29,7 +30,9 @@ function Profile() {
     <div>
       <h3> Bienvenido: <strong>{profileDetails.username}</strong>  </h3>
       <img src={profileDetails.image} alt="imagen perfil" width={200}/>
-      <Link to={`/profile/${profileDetails._id}/edit`}><button>Editar Perfil</button></Link>
+      <br />
+      <br />
+      <Link to={`/profile/${profileDetails._id}/edit`}><Button variant="success" >Editar Perfil</Button></Link>
     </div>
   )
 }

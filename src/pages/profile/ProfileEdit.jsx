@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { editProfileService } from "../../services/auth.services";
+import { editProfileService, getProfileDetailsService } from "../../services/auth.services";
 import { uploadService } from '../../services/profile.services'
+import { Form, Button } from 'react-bootstrap'
 
 function ProfileEdit() {
   const navigate = useNavigate();
@@ -17,20 +18,23 @@ function ProfileEdit() {
   //const handlePassword = (e) => setPassword(e.target.value)
 
   useEffect(() => {
-
+    getUserData()
   }, [])
 
-  // const getUserData = () => {
+  const getUserData = async () => {
 
-  //   try {
+    try {
 
-  //     const response = await 
+      const response = await getProfileDetailsService()
+      setUsername(response.data.username)
+      setEmail(response.data.email)
+      setImage(response.data.image)
 
-  //   } catch(error) {
-  //     navigate("/error")
-  //   }
+    } catch(error) {
+      navigate("/error")
+    }
 
-  // }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,41 +68,70 @@ function ProfileEdit() {
   }
 
   return (
-    <div>
-      <div id="login-form">
-        <h1>Editar Perfil</h1>
-        <form onSubmit={handleSubmit} >
-          <div>
-            <label htmlFor="username">Usuario</label>
-            <input
-              type="text"
-              name="username"
-              onChange={handleUsername}
-              value={username}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
+    <div className="form-center container-fluid">
+      <div className="row col-4 map_section">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label htmlFor="username"> Usuario </Form.Label>
+            <Form.Control type="text"
+                name="username"
+                onChange={handleUsername}
+                value={username} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label htmlFor="email"> Email </Form.Label>
+            <Form.Control type="email"
               name="email"
               onChange={handleEmail}
-              value={email}
-            />
-          </div>
-
-          <div>
-            <br />
-            <label htmlFor="image">Imagen</label>
-            <br />
-            <input type="file" id="img" name="image" onChange={handleImageChange} />
-          </div>
+              value={email} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label htmlFor="image"> Imagen </Form.Label>
+            <Form.Control type="file" id="img" name="image" onChange={handleImageChange} />
+          </Form.Group>
+          <img width={"150px"} src={image} alt="imagen perfil" />
           <br />
-          <button type="submit">Actualizar</button>
-        </form>
-        <img src={image} alt="imagen perfil" />
+        <Button type="submit" variant="success">Actualizar</Button>
+        </Form>  
       </div>
     </div>
+
+
+    // <div>
+    //   <div id="login-form">
+    //     <h1>Editar Perfil</h1>
+    //     <form onSubmit={handleSubmit} >
+    //       <div>
+    //         <label htmlFor="username">Usuario</label>
+    //         <input
+    //           type="text"
+    //           name="username"
+    //           onChange={handleUsername}
+    //           value={username}
+    //         />
+    //       </div>
+    //       <div>
+    //         <label htmlFor="email">Email</label>
+    //         <input
+    //           type="email"
+    //           name="email"
+    //           onChange={handleEmail}
+    //           value={email}
+    //         />
+    //       </div>
+
+    //       <div>
+    //         <br />
+    //         <label htmlFor="image">Imagen</label>
+    //         <br />
+    //         <input type="file" id="img" name="image" onChange={handleImageChange} />
+    //       </div>
+    //       <br />
+    //       <button type="submit">Actualizar</button>
+    //     </form>
+    //     <img src={image} alt="imagen perfil" />
+    //   </div>
+    // </div>
   );
 }
 
