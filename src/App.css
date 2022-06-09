@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgba(211, 211, 211, 0.479);
+  background-color: rgba(240, 232, 232, 0.479);
   height: 100vh;
 }
 
@@ -79,6 +79,7 @@
   text-decoration: none;
   color: olive;
   list-style: none;
+  padding: 25px;
 }
 
 .list-client:hover {

@@ -6,7 +6,7 @@ import IsFarmer from '../../components/IsFarmer'
 import { AuthContext } from '../../context/auth.context'
 import { detailsBoxesService, deleteBoxService, editBoxesService } from '../../services/box.services'
 import  PaymentIntent  from './PaymentIntent'
-import { Button } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import { deleteFoodInBoxService } from '../../services/box.services'
 
 function BoxDetails() {
@@ -66,24 +66,32 @@ function BoxDetails() {
   }
   
   return (
-    <div key={id}>
-      <h3> {boxDetails.name} </h3>
+    <div key={id} className="App">
+      <h3> Mi EcoCaja: <strong>{boxDetails.name}</strong>  </h3>
 
-      <h4>Tipo:{boxDetails.boxmodel}</h4>
+      <h4>Tipo: {boxDetails.boxmodel}</h4>
+      <div className="foodLi">
       {
         boxDetails.foods.map((eachFood) => {
           return(
-            
-            <div><img src={eachFood.image} alt="imagen caja" width={70}/>
-              <li className='list-client'>{eachFood.name}</li>
-              <IsFarmer><Button variant="success" onClick={() => handleDeleteFood(eachFood._id)} >Borrar</Button></IsFarmer>
-            </div>
-            
+          <Card
+            className="foodDet"
+            border="dark"
+            style={{ width: "12rem" }}
+            >
+              <Card.Header>
+               {eachFood.name}
+              </Card.Header>
+              <div className='list-client'><img src={eachFood.image} alt="imagen caja" width={70}/>           
+                <IsFarmer><Button variant="success" onClick={() => handleDeleteFood(eachFood._id)} >Borrar</Button></IsFarmer>
+              </div>
+              </Card>
           )
-        })
+      })
       }
+      </div>
       <br />
-      <h4>{boxDetails.price}<span> €</span></h4>
+      <h3> <span> <strong> {boxDetails.price}€</strong></span></h3>
       <IsFarmer><Link to={`/cajas/${id}/edit`}>
         <Button variant="success">Editar</Button>
       </Link>

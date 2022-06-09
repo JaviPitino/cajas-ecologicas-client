@@ -29,7 +29,7 @@ function ClientBoxes() {
   return (
     <div className="box-container">
     <Card className="card-container">
-      { clientBoxes.length === 0 ? (<Link to={'/cliente'}> <h5>No has comprado ninguna caja</h5> <Button>Compra tu caja</Button></Link>)
+      { clientBoxes.length === 0 ? (<Link to={'/cliente'}> <h5>No has comprado ninguna caja</h5> <Button variant="success">Compra tu caja</Button></Link>)
       : (
         clientBoxes.map((eachBox) => {
           return (

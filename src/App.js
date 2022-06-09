@@ -55,7 +55,7 @@ function App() {
         />
         <Route path="/profile/:id/edit" element={<ProfileEdit />} />
         {/* Cajas */}
-        <Route path="/cajas/create" element={<IsPrivate> <IsFarmer><BoxCreate /></IsFarmer> </IsPrivate>} />
+        <Route path="/cajas/create" end={true}element={<IsPrivate> <IsFarmer><BoxCreate /></IsFarmer> </IsPrivate>} />
         <Route path="/cajas/:id" element={<BoxDetails />} />
         <Route path="/cajas/:id/edit" element={<IsPrivate> <IsFarmer><BoxEdit /></IsFarmer> </IsPrivate>} />
         {/* Agricultor */}
@@ -67,7 +67,7 @@ function App() {
         <Route path="/miscajas" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
         <Route path="/:id/cajas" element={<IsPrivate><IsClient><BoxesByFarmer /></IsClient></IsPrivate>} />
         {/* Acceso sin credenciales */}
-        <Route path="/alimentos" element={<FoodsList />} />
+        <Route path="/alimentos" end={true} element={<FoodsList />} />
         <Route path="/alimentos/:id" element={<FoodDetails />} />
         <Route path="/infocajas" element={<InfoBoxes />} />
         <Route path="/error" element={<Error />} />
