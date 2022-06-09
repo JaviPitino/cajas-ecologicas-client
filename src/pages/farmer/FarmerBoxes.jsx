@@ -49,6 +49,9 @@ function FarmerBoxes() {
       )
     }
     </Card>
+    <Link to={"/agricultor"} >
+    <Button variant="success" > Volver </Button>
+    </Link>
     </div>
   )
 

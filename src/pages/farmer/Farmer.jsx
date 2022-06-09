@@ -9,7 +9,7 @@ function Farmer() {
   
   return (
     <div>
-      <h3>SOY FARMER(quitar esto)</h3>
+      <h3> Hola: {user.username} </h3>
       <Link to="/cajas"><Button variant="success" > Mis Eco Cajas </Button></Link>
       <Link to="/alimentos"><Button variant="success" >Alimentos</Button></Link>
     </div>
