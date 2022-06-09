@@ -57,17 +57,18 @@ function BoxCreate() {
   return (
     <div className="form-center container-fluid">
       <div className="row col-4 map_section">
-     <h3> Añadir caja </h3> 
-     <Form onSubmit={handleSubmit}>
-     <Form.Group className="mb-3" controlId="formBasicEmail">
+    <h3> Añadir caja </h3> 
+    <Form onSubmit={handleSubmit}>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Control
-         type="text"
+        type="text"
           name="nombre"
           onChange={handleNameChange}
           placeholder="Nombre"
         />
-       </Form.Group>
+      </Form.Group>
       <Form.Select onChange={handleSizeChange}>
+        <option>Selecciona el tamaño de tu Ecocaja</option>
         <option>Pequeña</option>
         <option>Mediana</option>
         <option>Grande</option>
@@ -96,9 +97,9 @@ function BoxCreate() {
               </>
             )
           })}
-       </Form.Select>
+      </Form.Select>
                 
-       </div>
+      </div>
     </div>
 
           <Button variant="success" type="submit"> Agregar </Button>
