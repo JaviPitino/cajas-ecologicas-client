@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.479);
   height: 100vh;
 }
 
@@ -29,7 +29,7 @@
 
 .card-container {
   border: none!important;
-  background-color: white!important;
+  background-color: rgb(255, 255, 255)!important;
   border-radius: 50px!important;
   align-items: center!important;
 }
@@ -595,7 +595,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(204, 204, 204);
   transition: .4s;
   border-radius: 30px;
  }
