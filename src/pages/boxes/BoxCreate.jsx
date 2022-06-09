@@ -25,7 +25,6 @@ function BoxCreate() {
   { const value = Array.from(e.target.selectedOptions, (option) => option.value);
     setFoods(value)
   }
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -56,7 +55,6 @@ function BoxCreate() {
   }
 
   return (
-
     <div className="form-center container-fluid">
       <div className="row col-4 map_section">
      <h3> Añadir caja </h3> 
@@ -83,25 +81,25 @@ function BoxCreate() {
         /> 
         {/* <span>€</span> */}
     <div>
-          <div>
-          <Form.Select
-              name="foods"
-              multiple
-              onChange={handleFoodsChange}
-              > 
-              {allFoods.map((eachFood)=> {
-                return(
-                  <>
-                  <option value={eachFood._id}>
+      <div>
+        <Form.Select
+          name="foods"
+          multiple
+          onChange={handleFoodsChange}
+          > 
+          {allFoods.map((eachFood)=> {
+            return(
+              <>
+              <option value={eachFood._id}>
                     {eachFood.name}
-                  </option>
-                  </>
-                )
-              })}
+              </option>
+              </>
+            )
+          })}
        </Form.Select>
                 
-              </div>
-            </div>
+       </div>
+    </div>
 
           <Button variant="success" type="submit"> Agregar </Button>
         </Form>

@@ -47,37 +47,7 @@ function Signup() {
   };
 
   return (
-    // <div className="form-center container-fluid">
-    //   <div className="row col-4 map_section">
-    //     <h3>Regístrate</h3>
-    //       <Form onSubmit={handleSignup}>
-    //       <Form.Group className="mb-3" controlId="formBasicEmail">
-    //         <Form.Control type="text"
-    //           name="username"
-    //           value={username}
-    //           onChange={handleUsernameChange} placeholder="Introduzca su nombre de usuario" />
-    //       </Form.Group>
-    //       <Form.Group className="mb-3" controlId="formBasicEmail">
-    //         <Form.Control type="email" placeholder="Enter email" />
-    //       </Form.Group>
-    //       <Form.Group className="mb-3" controlId="formBasicPassword">
-    //         <Form.Control type="password"
-    //           name="password"
-    //           value={password}
-    //           onChange={handlePasswordChange} placeholder="Inserte su contraseña" />
-    //       </Form.Group>
-    //       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    //         <Form.Check type="checkbox" label="Si eres agricultor marca esta casilla"
-    //           name="farmer"
-    //           onChange={handleIsFarmerChange}
-    //           checked={isFarmer}/>
-    //          {errorMessage !== null && <p>{errorMessage}</p>}
-    //       </Form.Group>
-    //       <Button variant="success" type="submit" ><Login/></Button>
-    //     </Form>
-    //   </div>
-    // </div>
-
+  
     <div>
       <h3>Regístrate</h3>
 
