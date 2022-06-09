@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/auth.context'
 import { detailsBoxesService, deleteBoxService, editBoxesService } from '../../services/box.services'
 import  PaymentIntent  from './PaymentIntent'
 import { Button } from 'react-bootstrap'
-
+import { deleteFoodInBoxService } from '../../services/box.services'
 
 function BoxDetails() {
   const { user } = useContext(AuthContext)
@@ -15,7 +15,7 @@ function BoxDetails() {
   const { id } = useParams()
   const [ boxDetails, setBoxDetails ] = useState(null)
   const [ productToBuy, setproductToBuy] = useState(null)
-
+  
   useEffect(() => {
     getBoxDetails()
   },[])
@@ -36,6 +36,15 @@ function BoxDetails() {
       navigate('/error')
     }
   }
+
+  // const handleDeleteFood = async (_id) => {
+  //   console.log(_id)
+  //   try {
+  //     await deleteFoodInBoxService(id, _id)      
+  //   } catch (error) {
+  //     navigate('/error')
+  //   }
+  // }
 
   const handleBuy = async (productToBuy) => {
     
@@ -67,6 +76,7 @@ function BoxDetails() {
             
             <div><img src={eachFood.image} alt="imagen caja" width={70}/>
               <li className='list-client'>{eachFood.name}</li>
+              {/* <IsFarmer><Button variant="success" onClick={handleDeleteFood(eachFood._id)} >Borrar</Button></IsFarmer> */}
             </div>
             
           )
