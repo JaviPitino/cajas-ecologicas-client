@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router'
 import { findBoxesService } from '../../services/box.services'
 import { AuthContext } from "../../context/auth.context";
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 function FarmerBoxes() {
@@ -23,7 +23,16 @@ function FarmerBoxes() {
   }
 
   if (!myBoxes) {
-    return <h3>...Loading...</h3>
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
   }
   return (
     <div className="box-container">

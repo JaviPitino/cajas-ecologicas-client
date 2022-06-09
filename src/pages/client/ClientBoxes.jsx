@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { clientBoxesService } from '../../services/client.services'
-import { Button, Card} from 'react-bootstrap';
+import { Button, Card, Spinner } from 'react-bootstrap';
 
 function ClientBoxes() {
     const navigate = useNavigate();
@@ -23,7 +23,16 @@ function ClientBoxes() {
     }
     
     if (!clientBoxes) {
-      return <h3>...Loading...</h3>
+      return <Button variant="primary" disabled>
+      <Spinner
+        as="span"
+        animation="grow"
+        size="sm"
+        role="status"
+        aria-hidden="true"
+      />
+      Loading...
+    </Button>
     }
 
   return (

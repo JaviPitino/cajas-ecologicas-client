@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { allFarmersService } from "../../services/farmers.services";
 import { getAllFoodsService } from "../../services/foods.services";
-import { ListGroup, Row, Col, Card, Button } from "react-bootstrap";
+import { ListGroup, Row, Col, Card, Button, Spinner } from "react-bootstrap";
 
 function ClientView() {
   const navigate = useNavigate();
@@ -24,6 +24,19 @@ function ClientView() {
       navigate("/error");
     }
   };
+
+  if (!farmers || !foods) {
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
+  }
 
   return (
     <div className="containerCliente">
