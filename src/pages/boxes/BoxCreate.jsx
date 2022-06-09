@@ -57,7 +57,7 @@ function BoxCreate() {
   return (
     <div className="form-center container-fluid">
       <div className="row col-4 map_section">
-     <h3> Añadir caja </h3> 
+    <h3> Añadir caja </h3> 
      <Form onSubmit={handleSubmit}>
      <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Control
@@ -68,6 +68,7 @@ function BoxCreate() {
         />
        </Form.Group>
       <Form.Select onChange={handleSizeChange}>
+        <option>Selecciona el tamaño de tu Ecocaja</option>
         <option>Pequeña</option>
         <option>Mediana</option>
         <option>Grande</option>
