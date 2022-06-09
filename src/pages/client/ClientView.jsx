@@ -29,7 +29,7 @@ function ClientView() {
     <div className="containerCliente">
       <div className="container-list-food">
         <div>
-          <Card border="dark" style={{ width: "12rem" }}>
+          <Card className="client-border" style={{ width: "12rem" }}>
             {farmers.map((eachFarmer) => {
               return (
                 <Link className="list-client" to={`/${eachFarmer._id}/cajas`}>

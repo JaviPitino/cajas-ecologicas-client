@@ -28,30 +28,33 @@ function BoxesByFarmer() {
 
   return (
   <div className="box-container">
+
     <Card className="card-container">
-      {
-      allBoxesByFarmer.map((eachBox) => {
-        return (
-          <>
-          <Card.Img variant="top"/>
+    { allBoxesByFarmer.length === 0 ? (<Link to={'/cliente'}> <h5 >Este agricultor no tiene EcoCajas creadas</h5> </Link>) 
+      : ( allBoxesByFarmer.map((eachBox) => {
+          return (
+            <>
+            <Card.Img variant="top" />
             <Card.Body>
             <Link className="link" to={`/cajas/${eachBox._id}`}>
-                <img src={eachBox.image} alt="imagen caja" />
-                
-            <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()} </Card.Title>
+              <img src={eachBox.image} alt="imagen caja" />
+            <Card.Title className="boxes-title"> {eachBox.name.toUpperCase()}</Card.Title>
             </Link>
-          <Card.Text className="boxes-text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
-          </Card.Text>
-          </Card.Body>
-          </>
+            <Card.Text className="boxes-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi odit velit soluta et quas voluptatibus quos ullam cumque dicta omnirupti?
+            </Card.Text>
+            </Card.Body>
+            </>
+          )
+        }
         )
-      })   
-      }            
+      )
+    }
     </Card>
       <br />
       
-    <Link className="link-btn" to={"/alimentos"}> <Button variant="success" to={"/alimentos"}> Volver </Button> </Link>
+    <Link className="link-btn" to={"/cliente"}> <Button variant="success"> Volver </Button> </Link>
+
     </div>
   )
 }

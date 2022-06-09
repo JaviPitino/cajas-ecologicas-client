@@ -10,7 +10,7 @@ function CarouselHome() {
     // };
   
   return (
-    <Carousel>
+    <Carousel fade>
           <Carousel.Item interval={4000}>
         <img
           className="image-carousel"
@@ -39,7 +39,7 @@ function CarouselHome() {
           alt="Campo de trigo"
         />
         <Carousel.Caption className='caption'>
-          <h2 className="titulo-foto lead">Escoge la Eco-caja que mejor se amolde a tí</h2>
+          <h2 className="titulo-foto lead">Escoge la EcoCaja que mejor se amolde a tí</h2>
           <p className="text-carousel">Cada agricultor, prepara tres tamaños de cajas diferentes, a las que podrás añadir más alimentos</p>
         </Carousel.Caption>
       </Carousel.Item>

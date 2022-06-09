@@ -32,9 +32,13 @@
   align-items: center!important;
 }
 
-.card-body {
+/* .card-body {
   margin: 0 auto!important;
   border-bottom: 1px solid black;
+} */
+
+.client-border{
+  border: none!important;
 }
 
 .boxes-title {
@@ -45,8 +49,8 @@
 
 .card-body p{
   align-items: center;
-  width: 300px;
-  padding-bottom: 10px;
+  /* width: 300px;
+  padding-bottom: 10px; */
 }
 
 .card-border {
