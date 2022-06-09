@@ -40,18 +40,15 @@ function FoodsList() {
 
   return (
     <div className="App">
-      <Search searchList={searchList} />{" "}
+      <Search searchList={searchList} />
       <Button variant="success" onClick={handleSort}>
-
-        {" "}
-        Ordenar alimentos{" "}
+        Ordenar alimentos
       </Button>
       <br />
       <br />
       <div className="foodLi">
         {allFoodsToDisplay.map((eachFood) => {
           return (
-
             <Card
                 className="foodDet"
                 border="dark"

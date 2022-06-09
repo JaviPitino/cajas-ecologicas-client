@@ -55,7 +55,14 @@ function NavbarTop() {
       ) : (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand as={NavLink} to="/">LOGO</Navbar.Brand>
+          <Navbar.Brand className="logo" as={NavLink} to="/"> 
+                <img
+                  src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654763561/EcoFood/logoecocajas_opaitp.png"
+                  height="32"
+                  className="d-inline-block align-top"
+                  alt="logo"
+                />
+              </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
