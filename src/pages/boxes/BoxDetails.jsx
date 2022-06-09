@@ -68,6 +68,7 @@ function BoxDetails() {
   return (
     <div key={id} className="App">
       <h3> Mi EcoCaja: <strong>{boxDetails.name}</strong>  </h3>
+      
 
       <h4>Tipo: {boxDetails.boxmodel}</h4>
       <div className="foodLi">
