@@ -24,7 +24,7 @@ function Profile() {
     }
   }
   if (!profileDetails ) {
-    return <Button variant="primary" disabled>
+    return <Button variant="success" disabled>
     <Spinner
       as="span"
       animation="grow"

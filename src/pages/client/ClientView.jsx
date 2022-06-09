@@ -26,7 +26,7 @@ function ClientView() {
   };
 
   if (!farmers || !foods) {
-    return <Button variant="primary" disabled>
+    return <Button variant="success" disabled>
     <Spinner
       as="span"
       animation="grow"
