@@ -13,6 +13,23 @@
   padding: 30px;
 }
 
+.btns-farmer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns-farmer button {
+  margin: 10px 20px;
+}
+.img-farmer-bg img {
+  width: 80vh;
+  border-radius: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 1px 3px 8px rgb(97, 95, 95);
+}
+
 .link {
   text-decoration: none;
   color: olive;

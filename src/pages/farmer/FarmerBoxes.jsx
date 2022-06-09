@@ -54,7 +54,6 @@ function FarmerBoxes() {
     </Link>
     </div>
   )
-
 }
 
 export default FarmerBoxes
