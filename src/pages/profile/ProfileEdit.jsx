@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { editProfileService } from "../../services/auth.services";
 import { uploadService } from '../../services/profile.services'
@@ -15,6 +15,22 @@ function ProfileEdit() {
   const handleUsername = (e) => setUsername(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
   //const handlePassword = (e) => setPassword(e.target.value)
+
+  useEffect(() => {
+
+  }, [])
+
+  // const getUserData = () => {
+
+  //   try {
+
+  //     const response = await 
+
+  //   } catch(error) {
+  //     navigate("/error")
+  //   }
+
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
