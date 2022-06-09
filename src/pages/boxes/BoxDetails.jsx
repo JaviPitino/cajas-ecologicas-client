@@ -93,6 +93,7 @@ function BoxDetails() {
       </div>
       <br />
       <h3> <span> <strong> {boxDetails.price}€</strong></span></h3>
+      <div className="btns-farmer">
       <IsFarmer><Link to={`/cajas/${id}/edit`}>
         <Button variant="success">Editar</Button>
       </Link>
@@ -105,7 +106,7 @@ function BoxDetails() {
         <><h3>Comprar Ecocaja</h3><PaymentIntent productToBuy={productToBuy}/></>
       }
       </IsClient>
-      
+      </div>
     </div>
   )
 }
