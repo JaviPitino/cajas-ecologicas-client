@@ -36,8 +36,8 @@ function FarmerBoxes() {
   }
   return (
     <div className="box-container">
-    <Card className="card-container">
-    { myBoxes.length === 0 ? (<Link to={'/cajas/create'}> <h5 >No tienes ninguna caja creada</h5> <Button variant="success"> Crea tu caja </Button> </Link>) 
+    <Card >
+    { myBoxes.length === 0 ? (<Link to={'/cajas/create'}> <h5 className="link" > No tienes ninguna caja creada</h5> <Button variant="success"> Crea tu caja </Button> </Link>) 
       : ( myBoxes.map((eachBox) => {
           return (
             <>
@@ -58,6 +58,7 @@ function FarmerBoxes() {
       )
     }
     </Card>
+    <br />
     <Link to={"/agricultor"} >
     <Button variant="success" > Volver </Button>
     </Link>

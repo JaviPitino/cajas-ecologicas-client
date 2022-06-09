@@ -3,7 +3,7 @@ import React from 'react'
 function NotFound() {
   return (
     <div>
-        <h3>Error 404. Página perdida en el huerto</h3>
+        <img className="error" src="https://res.cloudinary.com/dikww9ljc/image/upload/v1654808401/EcoFood/error404_r2riue.png" alt="error" />
     </div>
   )
 }
