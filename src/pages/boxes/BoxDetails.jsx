@@ -37,14 +37,14 @@ function BoxDetails() {
     }
   }
 
-  // const handleDeleteFood = async (_id) => {
-  //   console.log(_id)
-  //   try {
-  //     await deleteFoodInBoxService(id, _id)      
-  //   } catch (error) {
-  //     navigate('/error')
-  //   }
-  // }
+  const handleDeleteFood = async (idFood) => {
+    try {
+      await deleteFoodInBoxService(id, idFood)
+      getBoxDetails()      
+    } catch (error) {
+      navigate('/error')
+    }
+  }
 
   const handleBuy = async (productToBuy) => {
     
@@ -76,7 +76,7 @@ function BoxDetails() {
             
             <div><img src={eachFood.image} alt="imagen caja" width={70}/>
               <li className='list-client'>{eachFood.name}</li>
-              {/* <IsFarmer><Button variant="success" onClick={handleDeleteFood(eachFood._id)} >Borrar</Button></IsFarmer> */}
+              <IsFarmer><Button variant="success" onClick={() => handleDeleteFood(eachFood._id)} >Borrar</Button></IsFarmer>
             </div>
             
           )

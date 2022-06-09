@@ -27,8 +27,8 @@ const deleteBoxService = (id) => {
 }
 
 //Eliminar Food de la Caja
-const deleteFoodInBoxService = (id, _id) =>{
-  return service.patch(`cajas/${id}/deleteFood`, _id)
+const deleteFoodInBoxService = (idBox, idFood) =>{
+  return service.patch(`/cajas/${idBox}/${idFood}/deleteFood`)
 }
 
 export {
