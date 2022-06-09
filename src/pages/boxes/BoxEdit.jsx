@@ -4,7 +4,7 @@ import { editBoxesService, detailsBoxesService } from "../../services/box.servic
 import { getAllFoodsService } from "../../services/foods.services";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { Spinner, Button } from 'react-bootstrap'
+import { Spinner, Button, Form } from 'react-bootstrap'
 
 function BoxEdit() {
   const { id } = useParams();
@@ -18,6 +18,7 @@ function BoxEdit() {
 
   const handleNameChange = (e) => setName(e.target.value);
   const handlePriceChange = (e) => setPrice(e.target.value);
+  const handleSizeChange = (e) => setBoxmodel(e.target.value);
   const handleBoxmodelChange = (e) => setBoxmodel(e.target.value);
   const handleFoodsChange = (e) => 
   { const value = Array.from(e.target.selectedOptions, (option) => option.value);
@@ -73,39 +74,35 @@ function BoxEdit() {
   }
 
   return (
-    <div key={id}>
-      BoxEdit
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name" >Nombre</label>
-        <input
-          type="text"
+     <div key={id} className="form-center container-fluid">
+      <div className="row col-4 map_section">
+      <h4>  Edita tu EcoCaja </h4>
+      <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+      {/* <label htmlFor="name" >Nombre</label> */}
+      <Form.Control
+        type="text"
           name="nombre"
-          value={name}
           onChange={handleNameChange}
+          placeholder="Nombre"
         />
-        <br />
-                
-        <label htmlFor="boxmodel" >Tamaño Ecocaja</label>
-        {/* <select name="tamaño" ></select> */}
-        <input
-          type="text"
-          name="boxmodel"
-          value={boxmodel}
-          onChange={handleBoxmodelChange}
-          
-        />
-
-        <label htmlFor="price" >Precio</label>
-        <input
+      </Form.Group>
+      <Form.Select onChange={handleSizeChange}>
+        <option>Selecciona el tamaño de tu Ecocaja</option>
+        <option>Pequeña</option>
+        <option>Mediana</option>
+        <option>Grande</option>
+      </Form.Select>
+      <br />
+      <Form.Control
           type="number"
           name="price"
-          value={price}
           onChange={handlePriceChange}
-          
-        />
+          placeholder="Precio €"
+      /> 
+      <div>
         <div>
-          <div>
-          <select 
+          <Form.Select
               name="foods"
               multiple
               onChange={handleFoodsChange}
@@ -119,20 +116,15 @@ function BoxEdit() {
                   </>
                 )
               })}
-              </select>
-            {/* <Select
-            closeMenuOnSelect={false}
-            components={makeAnimated}
-            defaultInputValue={allFoods[0]}
-            isMulti
-            name="foods"
-            options={allFoods}
-            /> */}
+          </Form.Select>
+        <br />
+
           </div>
         </div>
-        <button type="submit">Guardar</button>
-      </form>
+        <Button variant="success" type="submit"> Guardar </Button>
+      </Form>
     </div>
+  </div>
   );
 }
 
