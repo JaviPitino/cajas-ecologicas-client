@@ -111,7 +111,7 @@ function BoxCreate() {
             )
           })}
       </Form.Select>
-                
+                <br />
       </div>
     </div>
 
