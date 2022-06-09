@@ -71,7 +71,7 @@ function App() {
         <Route path="/alimentos/:id" element={<FoodDetails />} />
         <Route path="/infocajas" element={<InfoBoxes />} />
         <Route path="/error" element={<Error />} />
-        <Route path="/notfound" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );
