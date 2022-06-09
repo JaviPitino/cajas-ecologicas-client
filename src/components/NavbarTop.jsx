@@ -35,6 +35,7 @@ function NavbarTop() {
                 <IsFarmer>  
                   <Nav.Link as={NavLink} to="/cajas/create"> Crear EcoCajas </Nav.Link>
                   <Nav.Link as={NavLink} to="/cajas"> Mis Ecocajas </Nav.Link>
+                  <Nav.Link as={NavLink} to="/alimentos/create">Añadir Alimento</Nav.Link>
                 </IsFarmer>
                 <IsClient>  
                   <Nav.Link as={NavLink} to="/cliente"> Resumen </Nav.Link>
