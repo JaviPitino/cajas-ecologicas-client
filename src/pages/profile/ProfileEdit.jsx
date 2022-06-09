@@ -38,7 +38,6 @@ function ProfileEdit() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("haciendo submit")
     try {
         const updateProfile = {
           username,
@@ -48,6 +47,7 @@ function ProfileEdit() {
   
       await editProfileService(id, updateProfile);
       navigate(`/profile`);
+      
     } catch (error) {
       navigate("/error");
     }
@@ -95,43 +95,6 @@ function ProfileEdit() {
         </Form>  
       </div>
     </div>
-
-
-    // <div>
-    //   <div id="login-form">
-    //     <h1>Editar Perfil</h1>
-    //     <form onSubmit={handleSubmit} >
-    //       <div>
-    //         <label htmlFor="username">Usuario</label>
-    //         <input
-    //           type="text"
-    //           name="username"
-    //           onChange={handleUsername}
-    //           value={username}
-    //         />
-    //       </div>
-    //       <div>
-    //         <label htmlFor="email">Email</label>
-    //         <input
-    //           type="email"
-    //           name="email"
-    //           onChange={handleEmail}
-    //           value={email}
-    //         />
-    //       </div>
-
-    //       <div>
-    //         <br />
-    //         <label htmlFor="image">Imagen</label>
-    //         <br />
-    //         <input type="file" id="img" name="image" onChange={handleImageChange} />
-    //       </div>
-    //       <br />
-    //       <button type="submit">Actualizar</button>
-    //     </form>
-    //     <img src={image} alt="imagen perfil" />
-    //   </div>
-    // </div>
   );
 }
 
