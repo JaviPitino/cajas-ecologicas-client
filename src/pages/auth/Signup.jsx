@@ -76,7 +76,7 @@ function Signup() {
           />
         </div>
         <div className="email">
-          <label> Correo Electrónico: </label>
+          <label> Tu Email: </label>
           <input
             type="email"
             name="email"
@@ -85,7 +85,7 @@ function Signup() {
           />
         </div>
         <div className="pass">
-          <label>Contraseña: </label>
+          <label>Password: </label>
           <input
             type="password"
             name="password"
