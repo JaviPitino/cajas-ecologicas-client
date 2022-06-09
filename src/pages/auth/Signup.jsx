@@ -48,50 +48,57 @@ function Signup() {
 
   return (
   
-    <div>
-      <h3>Regístrate</h3>
+    <div className="containerregistro">
+      <div className="Registro">
+        <h3>Regístrate</h3>
+      </div>
+      
 
-      <form onSubmit={handleSignup}>
-      <span> Si tienes un huerto y eres <strong>agricultor</strong> marca aquí &nbsp;</span>
-
-      <label className="switch">
-        <input input type="checkbox" 
-          name="farmer"
-          onChange={handleIsFarmerChange}
-          checked={isFarmer}
-        />
-        <span className="slider"></span>
-      </label>
-      <br />
-        <br />
-        <label>Nombre: </label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleUsernameChange}
-        />
-        <br />
-        <label> Correo Electrónico: </label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <br />
-        <label>Contraseña: </label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-
-        {errorMessage !== null && <p>{errorMessage}</p>}
-      <br />
-        
-        <Button variant="success" type="submit" ><Login/></Button>
+      <form className="formregistro" onSubmit={handleSignup}>
+        <div className="check">
+          <span> Si tienes un huerto y eres <strong>agricultor</strong> marca aquí &nbsp;</span>
+          <label className="switch">
+            <input input type="checkbox" 
+              name="farmer"
+              onChange={handleIsFarmerChange}
+              checked={isFarmer}
+            />
+            <span className="slider"></span>
+          </label>
+        </div>
+        <div className="nameregistro">
+          <label>Nombre: </label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div className="email">
+          <label> Correo Electrónico: </label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <div className="pass">
+          <label>Contraseña: </label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div className="error">
+          {errorMessage !== null && <p>{errorMessage}</p>}
+        </div>
+        <div className="botonregistro">
+          <Button variant="success" type="submit" ><Login/></Button>
+        </div>
       </form>
     </div>
   );
