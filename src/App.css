@@ -209,11 +209,11 @@
    }
    
    input:checked + .slider {
-    background-color: olive;
+    background-color: #28a745;
    }
    
    input:focus + .slider {
-    box-shadow: 0 0 1px olive;
+    box-shadow: 0 0 1px #28a745;
    }
    
    input:checked + .slider:before {
@@ -386,11 +386,11 @@
  }
  
  input:checked + .slider {
-  background-color: olive;
+  background-color: #28a745;
  }
  
  input:focus + .slider {
-  box-shadow: 0 0 1px olive;
+  box-shadow: 0 0 1px #28a745;
  }
  
  input:checked + .slider:before {
@@ -445,11 +445,11 @@
  }
  
  input:checked + .slider {
-  background-color: olive;
+  background-color: #28a745;
  }
  
  input:focus + .slider {
-  box-shadow: 0 0 1px olive;
+  box-shadow: 0 0 1px #28a745;
  }
  
  input:checked + .slider:before {
@@ -585,11 +585,11 @@
    }
    
    input:checked + .slider {
-    background-color: olive;
+    background-color: #28a745;
    }
    
    input:focus + .slider {
-    box-shadow: 0 0 1px olive;
+    box-shadow: 0 0 1px #28a745;
    }
    
    input:checked + .slider:before {
@@ -631,11 +631,11 @@
  }
  
  input:checked + .slider {
-  background-color: olive;
+  background-color: #28a745;
  }
  
  input:focus + .slider {
-  box-shadow: 0 0 1px olive;
+  box-shadow: 0 0 1px #28a745;
  }
  
  input:checked + .slider:before {
@@ -795,11 +795,11 @@
    }
    
    input:checked + .slider {
-    background-color: olive;
+    background-color: #28a745;
    }
    
    input:focus + .slider {
-    box-shadow: 0 0 1px olive;
+    box-shadow: 0 0 1px #28a745;
    }
    
    input:checked + .slider:before {
@@ -841,11 +841,11 @@
  }
  
  input:checked + .slider {
-  background-color: olive;
+  background-color: #28a745;
  }
  
  input:focus + .slider {
-  box-shadow: 0 0 1px olive;
+  box-shadow: 0 0 1px #28a745;
  }
  
  input:checked + .slider:before {
