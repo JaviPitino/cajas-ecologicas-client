@@ -4,6 +4,7 @@ import { editBoxesService, detailsBoxesService } from "../../services/box.servic
 import { getAllFoodsService } from "../../services/foods.services";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { Spinner, Button } from 'react-bootstrap'
 
 function BoxEdit() {
   const { id } = useParams();
@@ -58,6 +59,19 @@ function BoxEdit() {
     }
   };
 
+  if (!allFoods) {
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
+  }
+
   return (
     <div key={id}>
       BoxEdit
@@ -70,31 +84,7 @@ function BoxEdit() {
           onChange={handleNameChange}
         />
         <br />
-        {/* <label htmlFor="boxmodel">Pequeña</label>
-        <input
-          type="checkbox"
-          name="boxmodel"
-          onChange={handleBoxmodelChange}
-          value={boxmodel}
-        />
-        
-        <label htmlFor="boxmodel">Mediana</label>
-        <input
-          type="checkbox"
-          name="boxmodel"
-          onChange={handleBoxmodelChange}
-          value={boxmodel}
-        />
-        
-        <label htmlFor="boxmodel">Grande</label>
-        <input
-          type="checkbox"
-          name="boxmodel"
-          onChange={handleBoxmodelChange}
-          value={boxmodel}
-        />
-        <br /> */}
-        
+                
         <label htmlFor="boxmodel" >Tamaño Ecocaja</label>
         {/* <select name="tamaño" ></select> */}
         <input

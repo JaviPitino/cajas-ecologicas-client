@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { findBoxesIdFarmer } from '../../services/box.services'
 import { Link } from 'react-router-dom'
-import { Card, Button, Row, Col } from 'react-bootstrap'
+import { Card, Button, Row, Col, Spinner } from 'react-bootstrap'
 
 function BoxesByFarmer() {
   const navigate = useNavigate()
@@ -24,7 +24,18 @@ function BoxesByFarmer() {
   }
 
     
-  if (!allBoxesByFarmer) return <h3>...Loading</h3>
+  if (!allBoxesByFarmer){
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
+  } 
 
   return (
   <div className="box-container">

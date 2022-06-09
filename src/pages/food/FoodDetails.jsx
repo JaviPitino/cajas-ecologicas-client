@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getFoodDetailsService } from "../../services/foods.services";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
 
 function FoodDetails() {
   const navigate = useNavigate();
@@ -22,7 +22,16 @@ function FoodDetails() {
   };
 
   if (!foodDetails) {
-    return <h3>...Loading</h3>;
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
   }
 
   return (

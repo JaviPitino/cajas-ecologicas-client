@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { addNewBoxService } from '../../services/box.services'
 import { getAllFoodsService } from '../../services/foods.services'
 import { verifyService } from '../../services/auth.services';
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Spinner } from 'react-bootstrap'
 import Select from 'react-select';
 
 function BoxCreate() {
@@ -52,6 +52,19 @@ function BoxCreate() {
     } catch (error) {
       navigate('/error')
     }
+  }
+
+  if (!allFoods) {
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
   }
 
   return (

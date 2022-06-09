@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { getProfileDetailsService } from '../../services/auth.services'
 import { AuthContext } from "../../context/auth.context";
-import { Button} from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
+
 
 function Profile() {
 
@@ -23,7 +24,16 @@ function Profile() {
     }
   }
   if (!profileDetails ) {
-    return <h3>...Loading...</h3>
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
   }
   
   return (

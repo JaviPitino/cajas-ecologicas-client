@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllFoodsService } from "../../services/foods.services";
 import Search from "../../components/Search";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
 
 function FoodsList() {
   const navigate = useNavigate();
@@ -37,6 +37,19 @@ function FoodsList() {
     foodCopyList.sort((elem1, elem2) => (elem1.name > elem2.name ? 1 : -1));
     setAllFoodsToDisplay(foodCopyList);
   };
+
+  if (!allFoodsToDisplay) {
+    return <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
+  }
 
   return (
     <div className="App">
