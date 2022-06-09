@@ -44,7 +44,6 @@ function ClientView() {
             })}
           </Card>
         </div>
-
         <div className="foodLi">
           {foods.map((eachFood) => {
             return (

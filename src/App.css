@@ -37,6 +37,11 @@
   border-bottom: 1px solid black;
 } */
 
+.logo {
+  position: relative;
+  padding-bottom: 15px!important;
+}
+
 .client-border{
   border: none!important;
 }
@@ -49,8 +54,6 @@
 
 .card-body p{
   align-items: center;
-  /* width: 300px;
-  padding-bottom: 10px; */
 }
 
 .card-border {
@@ -794,6 +797,7 @@
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .foodDet{
