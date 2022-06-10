@@ -1,70 +1,264 @@
-# Getting Started with Create React App
+# MiEcocaja
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[App Link] https://ecocajas.netlify.app/
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+MiEcoCaja es una plataforma para los que buscan una manera más sostenible y ecológica de tener los mejores alimentos.
 
-### `npm start`
+## Users Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-  **404:** Cuando se accede a una página no existente aparece un 404 que nos indica que no existe la página a donde intenta acceder
+-  **Signup:** Puedo registrarme en la página para como cliente adquirir MiEcocaja y copmo agricultor añadir Ecocajas para los clientes
+-  **Login:** Puedo hacer login y me redirecciona la página según sea agricultor o cliente a mi espacio personal
+-  **Logout:** Como usuario puedo cerrar la sesión para que nadie pueda acceder
+-  **List Foods** Como usuario (ya sea registrado o no) puedo ver un listado de los alimentos disponibles
+-  **Search Foods** Como usuario (ya sea registrado o no) puedo realizar una busqueda de alimentos y ordenarlos
+-  **List Farmers** Como usuario tengo acceso a una lista de agricultores y puedo consultar las Ecocajas que ofrece cada uno.
+-  **Buy Boxes** Como cliente puedo comprar Ecocajas creadas por los agricultores, gracias a la pasarela de pago
+-  **Create Box** Como agricultor puedo crear MiEcocaja para que los clientes puedan tener acceso a ella
+-  **Edit Boxes** Como agricultor puedo editar  mis Ecocajas
+-  **Delete Boxes** Como agricultor puedo borrar mis Ecocajas
+-  **Create Food** Como agricultor puedo puedo añadir nuevos alimentos disponibles en mi huerta
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Backlog
 
-### `npm test`
+Funcionalidades Admin:
+- el administrador tendra acceso a todos los aspectos de borrado de alimentos, clientes, agricultores
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Geo Location:
+- Ver los agricultores cercanos a la zona en la que ten encuentras
+  
+# Users
 
-### `npm run build`
+## All Users
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- / - Home
+- /signup - Signup form
+- /login - Login form
+- /profile/:id/edit - Edit profile
+- /alimentos - food list
+- /infocajas - Info by MiEcocaja
+- 404
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Client Routes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- /cliente - View Resume
+- /miscajas - Boxes buy by client
+- /:id/cajas - Box details
+- /profile - my details and favorite restaurants
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Farmer Routes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- /agricultor - View Resume
+- /alimentos/create - Create new Food
+- /cajas - My boxes
+- /cajas/create - Box create
+- /cajas/:id - Box edit
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Pages
 
-## Learn More
+- Home (public)
+- InfoBoxes (public)
+- FoodList (public)
+- FoodDetails (public)
+- Signup (anon only)
+- Login (anon only)
+- Profile (user only)
+- ProfileEdit (user only)
+- Farmer ( farmer only)
+- FarmerBoxes (farmer only)
+- Food Create (farmer only)
+- BoxCreate (farmer only)
+- BoxEdit (farmer only)
+- ClientView (client only)
+- ClientBoxes (client only)
+- BoxDetail (users only)
+- 404 Page (public)
+- Error (public)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Carousel
+- Search component (search foods)
+- NavbarTop
+- IsPrivate - control access
+- IsClient - control access
+- IsFarmer - control access
 
-### Code Splitting
+## Services
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Auth Service
+  - signupService (user) 
+  - loginService (user)
+  - verifyService ()
+  - editProfileService (id, updateUser)
+  - getProfileDetailsService (id)
+- Box Service
+  - addNewBoxService (newBox)
+  - findBoxesService ()
+  - findBoxesIdFarmer (idFarmer)
+  - detailsBoxesService (idBox)
+  - editBoxesService (id, box)
+  - deleteBoxService (id)
+  - deleteFoodInBoxService (idBox, idFood)
+- Client Service
+  - clientBoxesService ()
+- Config Service
+- Farmers Service
+  - allFarmersService ()
+  - oneFarmerService (id)
+- Foods Service
+  - getAllFoodsService ()
+  - addNewFoodService (newFood) 
+  - getFoodDetailsService (id)
+  - deleteFoodService (id)
+  - editFoodService (id, food)
+- Profile Services
+ - uploadService (uploadForm)
 
-### Analyzing the Bundle Size
+# Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Models
 
-### Making a Progressive Web App
+User model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+username - String // required & unique
+email - String // required & unique
+password - String // required
+image - String // default
+role - String // enum
+```
 
-### Advanced Configuration
+Food model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+image - String
+name - String // required
+type - String // enum & require
+season - String // enum & require
+```
 
-### Deployment
+Box model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+name - String 
+boxmodel - String // enum
+client - type & ref
+farmer - type & ref
+foods - type & ref
+price - Number
+image - String // default
+```
 
-### `npm run build` fails to minify
+## API Endpoints/Backend Routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+- GET /auth/me
+- POST /auth/signup
+  - body:
+    - username
+    - email
+    - password
+- POST /auth/login
+  - body:
+    - email
+    - password
+- POST /auth/logout
+  - body: (empty)
+- GET /auth/verify
+- GET /cajas/:id/
+  - payload:
+    - _id
+- GET /cajas/:id
+  - payload:
+   - _id
+- GET /:id/cajas
+  - params:
+    - id
+- POST /create-payment-intent
+  - body:
+    - items
+- POST /cajas/create
+  - body:
+    - name
+    - boxmodel
+    - foods
+    - price
+- GET /cajas/:id/details
+  - params:
+    - id
+- PATCH /cajas/:id/delteFood
+  - params:
+    - idBox
+    - idFood
+- PATCH /cajas/:id/edit
+  - params:
+    - id
+  - body:
+    - name
+    - boxmodel
+    - foods
+    - price
+- DELETE /caja/:id/delete
+  - params:
+    - id
+- GET /agricultores
+- GET /agricultor
+- GET /alimentos
+- POST /alimentos
+  - body:
+    - name
+    - type
+    - season
+    - image
+- GET /alimentos/:id
+  - params:
+    - id
+- PATCH alimentos/:id
+  - params:
+    - id
+  - body:
+    - name
+    - type
+    - season
+    - image
+- DELETE /alimentos/:id
+  - params:
+    - id
+- GET /profile/:id
+  - payload:
+    - _id
+- PATCH /profile/:id/edit
+  - body:
+    - username
+    - email
+    - image
+  - params:
+    - id
+- POST /
+
+## Links
+
+### Figma
+
+[Link to your Figma board](https://www.figma.com/file/NLwPMchXJTwRMBBjC2E5yo/Healthy-Box?node-id=0%3A1)
+
+### Git
+
+The url to your repository and to your deployed project
+
+[Client repository Link](https://github.com/luthiwd/cajas-ecologicas-client)
+[Server repository Link](https://github.com/luthiwd/cajas-ecologicas-server)
+
+[Deploy Link](https://eco-cajas.herokuapp.com/)
+
+### Slides
+
+The url to your presentation slides
+
+[Slides Link](https://docs.google.com/presentation/d/1th0Gt7Xehia_oYJ2vHKbBhos24GrJt4IXieezIaG_Uw/edit#slide=id.p)

@@ -69,11 +69,7 @@ function FoodCreate() {
           <Form.Select
             onChange={handleTypeChange}
             htmlFor="type"
-<<<<<<< HEAD
-           >
-=======
           >
->>>>>>> f93ab5f (Limpiamos código)
             <option>Elije el tipo</option>
             <option value="Fruta">Fruta</option>
             <option value="Verdura">Verdura</option>
