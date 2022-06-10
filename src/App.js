@@ -21,8 +21,8 @@ import BoxesByFarmer from "./pages/boxes/BoxesByFarmer";
 
 import IsFarmer from "./components/IsFarmer";
 //Errors
-import Error from "./pages/Error"
-import NotFound from "./pages/NotFound"
+import Error from "./pages/Error";
+import NotFound from "./pages/NotFound";
 
 // components
 import NavbarTop from "./components/NavbarTop";
@@ -31,8 +31,6 @@ import NavbarTop from "./components/NavbarTop";
 import IsPrivate from "./components/IsPrivate";
 import ClientBoxes from "./pages/client/ClientBoxes";
 import IsClient from "./components/IsClient";
-
-
 
 function App() {
   return (
@@ -54,18 +52,94 @@ function App() {
           }
         />
         <Route path="/profile/:id/edit" element={<ProfileEdit />} />
-        {/* Cajas */}
-        <Route path="/cajas/create" end={true}element={<IsPrivate> <IsFarmer><BoxCreate /></IsFarmer> </IsPrivate>} />
+        {/* Boxes */}
+        <Route
+          path="/cajas/create"
+          end={true}
+          element={
+            <IsPrivate>
+              {" "}
+              <IsFarmer>
+                <BoxCreate />
+              </IsFarmer>{" "}
+            </IsPrivate>
+          }
+        />
         <Route path="/cajas/:id" element={<BoxDetails />} />
-        <Route path="/cajas/:id/edit" element={<IsPrivate> <IsFarmer><BoxEdit /></IsFarmer> </IsPrivate>} />
-        {/* Agricultor */}
-        <Route path="/agricultor" element={<IsPrivate> <IsFarmer><Farmer /></IsFarmer> </IsPrivate>} />
-        <Route path="/cajas" element={<IsPrivate><IsFarmer><FarmerBoxes /></IsFarmer></IsPrivate>} /> 
-        <Route path="/alimentos/create" element={<IsPrivate><IsFarmer><FoodCreate /></IsFarmer> </IsPrivate>} />
-        {/*  Clientes */}
-        <Route path="/cliente" element={<IsPrivate><IsClient><ClientView /></IsClient></IsPrivate>} />
-        <Route path="/miscajas" element={<IsPrivate><IsClient><ClientBoxes /></IsClient></IsPrivate>} />
-        <Route path="/:id/cajas" element={<IsPrivate><IsClient><BoxesByFarmer /></IsClient></IsPrivate>} />
+        <Route
+          path="/cajas/:id/edit"
+          element={
+            <IsPrivate>
+              {" "}
+              <IsFarmer>
+                <BoxEdit />
+              </IsFarmer>{" "}
+            </IsPrivate>
+          }
+        />
+        {/* Farmer */}
+        <Route
+          path="/agricultor"
+          element={
+            <IsPrivate>
+              {" "}
+              <IsFarmer>
+                <Farmer />
+              </IsFarmer>{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/cajas"
+          element={
+            <IsPrivate>
+              <IsFarmer>
+                <FarmerBoxes />
+              </IsFarmer>
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/alimentos/create"
+          element={
+            <IsPrivate>
+              <IsFarmer>
+                <FoodCreate />
+              </IsFarmer>{" "}
+            </IsPrivate>
+          }
+        />
+        {/*  Client */}
+        <Route
+          path="/cliente"
+          element={
+            <IsPrivate>
+              <IsClient>
+                <ClientView />
+              </IsClient>
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/miscajas"
+          element={
+            <IsPrivate>
+              <IsClient>
+                <ClientBoxes />
+              </IsClient>
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/:id/cajas"
+          element={
+            <IsPrivate>
+              <IsClient>
+                <BoxesByFarmer />
+              </IsClient>
+            </IsPrivate>
+          }
+        />
         {/* Acceso sin credenciales */}
         <Route path="/alimentos" end={true} element={<FoodsList />} />
         <Route path="/alimentos/:id" element={<FoodDetails />} />

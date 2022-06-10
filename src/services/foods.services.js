@@ -1,29 +1,29 @@
-import service from "./config.services"
+import service from "./config.services";
 //Mostramos todas las Foods de la DB
 const getAllFoodsService = () => {
-  return service.get('/alimentos')
-}
+  return service.get("/alimentos");
+};
 //Añadimos un nuevo Food a la DB
 const addNewFoodService = (newFood) => {
-  return service.post('/alimentos',newFood)
-}
-//Mostramos los detalles de un food en concreto
+  return service.post("/alimentos", newFood);
+};
+//Mostramos los detalles de un Food en concreto
 const getFoodDetailsService = (id) => {
-  return service.get(`/alimentos/${id}`)
-}
-//Eliminamos un food de la DB
+  return service.get(`/alimentos/${id}`);
+};
+//Eliminamos un Food de la DB
 const deleteFoodService = (id) => {
-  return service.delete(`/alimentos/${id}`)
-}
+  return service.delete(`/alimentos/${id}`);
+};
 //Editamos una Food (Sólo puede el Admin)
 const editFoodService = (id, food) => {
-  return service.patch(`/alimentos/${id}`, food)
-}
+  return service.patch(`/alimentos/${id}`, food);
+};
 
 export {
   getAllFoodsService,
   addNewFoodService,
   getFoodDetailsService,
   deleteFoodService,
-  editFoodService
-}
+  editFoodService,
+};

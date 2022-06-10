@@ -4,6 +4,8 @@ import { addNewFoodService } from "../../services/foods.services";
 import { Form, Button } from "react-bootstrap";
 import { uploadService } from "../../services/profile.services";
 
+//Página para añadir un nuevo Food a la DB
+
 function FoodCreate() {
   const navigate = useNavigate();
 
@@ -15,6 +17,8 @@ function FoodCreate() {
   const handleNameChange = (e) => setName(e.target.value);
   const handleSeasonChange = (e) => setSeason(e.target.value);
   const handleTypeChange = (e) => setType(e.target.value);
+
+  //Añadimos el Food a la DB
 
   const handleSubmit = async (e) => {
     try {
@@ -31,6 +35,8 @@ function FoodCreate() {
     }
   };
 
+  //Añadimos la imagen a Cloudinary y guardamos su Url en la DB
+
   const handleImageChange = async (e) => {
     const uploadForm = new FormData();
     uploadForm.append("image", e.target.files[0]);
@@ -42,6 +48,8 @@ function FoodCreate() {
       navigate("/error");
     }
   };
+
+  // Renderizamos el formulario para añadir un nuevo Food
 
   return (
     <div className="form-center container-fluid">
@@ -61,7 +69,11 @@ function FoodCreate() {
           <Form.Select
             onChange={handleTypeChange}
             htmlFor="type"
+<<<<<<< HEAD
            >
+=======
+          >
+>>>>>>> f93ab5f (Limpiamos código)
             <option>Elije el tipo</option>
             <option value="Fruta">Fruta</option>
             <option value="Verdura">Verdura</option>

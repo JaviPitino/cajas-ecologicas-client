@@ -4,6 +4,8 @@ import { loginService } from "../../services/auth.services";
 import { AuthContext } from "../../context/auth.context";
 import { Button, Form, Modal } from "react-bootstrap";
 
+//Página Pop Up para el login del usuario
+
 function Login() {
   // UseContext
   const { authenticateUser, user } = useContext(AuthContext);
@@ -11,7 +13,7 @@ function Login() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const navigate = useNavigate();
 
   // Creamos los estados
@@ -22,7 +24,9 @@ function Login() {
   // Eventos Handlers
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  
+
+  //Funcionalidad para mandar la información introducida en el formulario al BE y controlar el acceso desde allí
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -53,9 +57,11 @@ function Login() {
     }
   };
 
+  //Renderizamos el formulario para el login a la web. El login redireccionara segun el rol del usuario que accede.
+
   return (
     <>
-    <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Accede
       </Button>
 
@@ -87,18 +93,13 @@ function Login() {
               />
             </Form.Group>
             <Button type="submit" variant="success" onClick={handleClose}>
-            Acceder
-          </Button>
+              Acceder
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          {/* <Button variant="success" onClick={handleClose}>
-            Cerrar
-          </Button> */}
-        </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
 export default Login;

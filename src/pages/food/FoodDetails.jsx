@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { getFoodDetailsService } from "../../services/foods.services";
 import { Button, Card, Spinner } from "react-bootstrap";
 
+//Página para mostrar los detalles de un Food seleccionado
+
 function FoodDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -11,6 +13,8 @@ function FoodDetails() {
   useEffect(() => {
     getFoodDetails();
   }, []);
+
+  //Obtenemos los detalles del Food por su Id
 
   const getFoodDetails = async () => {
     try {
@@ -23,17 +27,21 @@ function FoodDetails() {
   };
 
   if (!foodDetails) {
-    return (<Button variant="success" disabled>
-    <Spinner
-      as="span"
-      animation="grow"
-      size="sm"
-      role="status"
-      aria-hidden="true"
-    />
-    Loading...
-  </Button>)
+    return (
+      <Button variant="success" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+    );
   }
+
+  //Renderizamos los detalles del Foood
 
   return (
     <div>

@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { allFarmersService } from "../../services/farmers.services";
 import { getAllFoodsService } from "../../services/foods.services";
-import { ListGroup, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { Card, Button, Spinner } from "react-bootstrap";
+
+// Página del Client, le redireccionamos cuando hace login
 
 function ClientView() {
   const navigate = useNavigate();
@@ -13,6 +15,8 @@ function ClientView() {
   useEffect(() => {
     getAllInfo();
   }, []);
+
+  // Obtenemos lista de Foods y de Farmers para mostrar
 
   const getAllInfo = async () => {
     try {
@@ -26,17 +30,21 @@ function ClientView() {
   };
 
   if (!farmers || !foods) {
-    return <Button variant="success" disabled>
-    <Spinner
-      as="span"
-      animation="grow"
-      size="sm"
-      role="status"
-      aria-hidden="true"
-    />
-    Loading...
-  </Button>
+    return (
+      <Button variant="success" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+    );
   }
+
+  //Renderizamos las dos listas que hemos obtenido, para que el Client puede interactuar
 
   return (
     <div className="containerCliente">

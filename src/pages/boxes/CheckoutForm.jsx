@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import {
   PaymentElement,
   useStripe,
-  useElements
+  useElements,
 } from "@stripe/react-stripe-js";
+
+//Formulario de la pasarela de pago
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -80,7 +82,11 @@ export default function CheckoutForm() {
   return (
     <form className="payForm" id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
-      <button variant="succcess" disabled={isLoading || !stripe || !elements} id="submit">
+      <button
+        variant="succcess"
+        disabled={isLoading || !stripe || !elements}
+        id="submit"
+      >
         <span id="button-text">
           {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
         </span>

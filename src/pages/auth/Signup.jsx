@@ -2,12 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signupService } from "../../services/auth.services";
-import { Button, Form } from "react-bootstrap"
+import { Button, Form } from "react-bootstrap";
 import Login from "./Login";
 
+//Página para el registro de usuarios
 
 function Signup() {
-
   const navigate = useNavigate();
 
   // Creamos los estados
@@ -21,22 +21,23 @@ function Signup() {
   const handleUsernameChange = (e) => setUserName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleIsFarmerChange = (e) => setIsFarmer(!isFarmer)
+  const handleIsFarmerChange = (e) => setIsFarmer(!isFarmer);
+
+  //Funcionalidad para la creación de un usuario
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    console.log(isFarmer)
-    let youFarmer="";
-    if (isFarmer === true ){
-      youFarmer = "farmer"
-    }else {
-      youFarmer = "client"
+    console.log(isFarmer);
+    let youFarmer = "";
+    if (isFarmer === true) {
+      youFarmer = "farmer";
+    } else {
+      youFarmer = "client";
     }
-        const user = { username, email, password, role:youFarmer};
-    
+    const user = { username, email, password, role: youFarmer };
+
     try {
       await signupService(user);
-      // navigate('/login')
     } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data.errorMessage);
@@ -46,19 +47,28 @@ function Signup() {
     }
   };
 
+  //Renderizamos el formulario y de manera automatica tras el registro aparece el Pop Up del componente Login
+
   return (
-  
     <div className="containerregistro">
       <div className="Registro">
         <h3>Regístrate</h3>
       </div>
-      
 
       <form className="formregistro" onSubmit={handleSignup}>
         <div className="check">
-          <span> Si tienes un huerto y eres <strong>agricultor</strong> marca aquí &nbsp;</span>
+          <span>
+            {" "}
+            Si tienes un huerto y eres <strong>agricultor</strong> marca aquí
+            &nbsp;
+          </span>
           <label className="switch">
-            <input input type="checkbox" 
+            {" "}
+            //*Aquí el usuario elije su rol para el futuro acceso y con el
+            gestionamos la redirección
+            <input
+              input
+              type="checkbox"
               name="farmer"
               onChange={handleIsFarmerChange}
               checked={isFarmer}
@@ -97,7 +107,9 @@ function Signup() {
           {errorMessage !== null && <p>{errorMessage}</p>}
         </div>
         <div className="botonregistro">
-          <Button variant="success" type="submit" ><Login/></Button>
+          <Button variant="success" type="submit">
+            <Login />
+          </Button>
         </div>
       </form>
     </div>

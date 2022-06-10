@@ -1,13 +1,14 @@
-import React from 'react'
-import { useContext }  from 'react'
-import { Navigate } from 'react-router'
-import { AuthContext } from '../context/auth.context'
+import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
-function IsFarmer(props) {  
-  const { user } = useContext(AuthContext)  
-  if (user.role === "farmer"){    
-    return props.children  
+//Funcionalidad para que algunas rutas sólo se muestren si tiene el usuario el role= Farmer
+
+function IsFarmer(props) {
+  const { user } = useContext(AuthContext);
+  if (user.role === "farmer") {
+    return props.children;
   }
 }
 
-export default IsFarmer
+export default IsFarmer;

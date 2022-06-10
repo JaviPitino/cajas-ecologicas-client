@@ -1,50 +1,58 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { getProfileDetailsService } from '../../services/auth.services'
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { getProfileDetailsService } from "../../services/auth.services";
 import { AuthContext } from "../../context/auth.context";
-import { Button, Spinner } from 'react-bootstrap'
+import { Button, Spinner } from "react-bootstrap";
 
+//Pagina de Profile
 
 function Profile() {
-
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate()
-  const [ profileDetails, setProfileDetails ] = useState(null)
-  
-  useEffect(() => {
-    getProfileDetails()
-  },[])
+  const navigate = useNavigate();
+  const [profileDetails, setProfileDetails] = useState(null);
 
+  useEffect(() => {
+    getProfileDetails();
+  }, []);
+  //Obtenemos los detellas del Perfil para mostrarlos
   const getProfileDetails = async () => {
     try {
-      const response = await getProfileDetailsService(user._id)
-      setProfileDetails(response.data)
+      const response = await getProfileDetailsService(user._id);
+      setProfileDetails(response.data);
     } catch (error) {
-      navigate('/error')
+      navigate("/error");
     }
+  };
+  if (!profileDetails) {
+    return (
+      <Button variant="success" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+    );
   }
-  if (!profileDetails ) {
-    return <Button variant="success" disabled>
-    <Spinner
-      as="span"
-      animation="grow"
-      size="sm"
-      role="status"
-      aria-hidden="true"
-    />
-    Loading...
-  </Button>
-  }
-  
+
+  // Renderizamos los detalles del Pefil
   return (
     <div>
-      <h3> Bienvenido: <strong>{profileDetails.username}</strong>  </h3>
-      <img src={profileDetails.image} alt="imagen perfil" width={200}/>
+      <h3>
+        {" "}
+        Bienvenido: <strong>{profileDetails.username}</strong>{" "}
+      </h3>
+      <img src={profileDetails.image} alt="imagen perfil" width={200} />
       <br />
       <br />
-      <Link to={`/profile/${profileDetails._id}/edit`}><Button variant="success" >Editar Perfil</Button></Link>
+      <Link to={`/profile/${profileDetails._id}/edit`}>
+        <Button variant="success">Editar Perfil</Button>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
