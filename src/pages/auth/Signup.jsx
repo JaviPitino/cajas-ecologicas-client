@@ -58,13 +58,11 @@ function Signup() {
       <form className="formregistro" onSubmit={handleSignup}>
         <div className="check">
           <span>
-            {" "}
-            Si tienes un huerto y eres <strong>agricultor</strong> marca aquí
+          Si tienes un huerto y eres <strong>agricultor</strong> marca aquí
             &nbsp;
           </span>
           <label className="switch">
-            {" "}
-            //*Aquí el usuario elije su rol para el futuro acceso y con el
+            {/* //*Aquí el usuario elije su rol para el futuro acceso y con el */}
             gestionamos la redirección
             <input
               input
