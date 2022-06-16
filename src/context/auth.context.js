@@ -44,10 +44,16 @@ function AuthWrapper(props) {
 
   if (isLoading === true) {
     return (
-      <div>
-        {" "}
-        <h3> Verificando Usuario </h3>{" "}
-      </div>
+      <Button variant="success" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
     );
   }
 
