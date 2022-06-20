@@ -98,10 +98,10 @@ function BoxEdit() {
               type="text"
               name="nombre"
               onChange={handleNameChange}
-              placeholder={name}
+              value={name}
             />
           </Form.Group>
-          <Form.Select onChange={handleSizeChange}>
+          <Form.Select onChange={handleSizeChange} value={boxmodel}>
             <option>Selecciona el tamaño de tu Ecocaja</option>
             <option>Pequeña</option>
             <option>Mediana</option>
@@ -112,7 +112,7 @@ function BoxEdit() {
             type="number"
             name="price"
             onChange={handlePriceChange}
-            placeholder="Precio €"
+            value={price}
           />
           <div>
             <div>
