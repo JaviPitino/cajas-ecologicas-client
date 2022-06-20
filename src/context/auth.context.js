@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useStateManager } from "react-select";
 import { verifyService } from "../services/auth.services";
+import { Button, Spinner } from "react-bootstrap";
 
 //Componente Contexto para controlar lo que se muetra
 

@@ -42,7 +42,6 @@ function Profile() {
   return (
     <div>
       <h3>
-        {" "}
         Bienvenido: <strong>{profileDetails.username}</strong>{" "}
       </h3>
       <img src={profileDetails.image} alt="imagen perfil" width={200} />
