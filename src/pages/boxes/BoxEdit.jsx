@@ -98,7 +98,7 @@ function BoxEdit() {
               type="text"
               name="nombre"
               onChange={handleNameChange}
-              placeholder="Nombre"
+              placeholder={name}
             />
           </Form.Group>
           <Form.Select onChange={handleSizeChange}>
